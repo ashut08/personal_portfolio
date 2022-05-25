@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
 // Colors
-const Color kPrimaryColor = Color(0xffC0392B);
+const Color kPrimaryColor = Color(0xff81230F);
 
 // Social Media
 const kSocialIcons = [
-  "https://img.icons8.com/metro/208/ffffff/facebook-new--v2.png",
-  "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png",
-  "https://img.icons8.com/android/480/ffffff/twitter.png",
-  "https://img.icons8.com/metro/308/ffffff/linkedin.png",
-  "https://img.icons8.com/material-rounded/384/ffffff/github.png",
-  "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png"
+  "assets/facebook-f-brands.svg",
+  "assets/instagram-brands.svg",
+  "assets/linkedin-in-brands.svg",
+  "assets/twitter-brands.svg",
 ];
 
 const kSocialLinks = [
@@ -70,6 +68,8 @@ final kServicesTitles = [
   "Technical Blog Writing",
   "Open Source - GitHub",
 ];
+
+// ignore: non_constant_identifier_names
 
 final kServicesDescriptions = [
   "Android app development via Flutter\n- Splash Screen\n- Firebase Auth/Cloud\n- REST APIs\n- Maps integration and more...!",

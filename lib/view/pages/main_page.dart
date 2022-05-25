@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:personal_portfolio/animation/entrancefader.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/screen_helper.dart';
+import 'package:personal_portfolio/view/pages/home_page.dart';
+import 'package:personal_portfolio/view/pages/main_section.dart';
+import 'package:personal_portfolio/view/pages/sections/about/aboutme.dart';
+import 'package:personal_portfolio/view/pages/sections/contacts/contact.dart';
+import 'package:personal_portfolio/view/pages/sections/projects/projects.dart';
+import 'package:personal_portfolio/view/pages/sections/services/service.dart';
 import 'package:personal_portfolio/widgets/logo.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +22,43 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  ScrollController _scrollController = ScrollController();
+  bool isPressed = false;
+  bool _isScrollingDown = false;
+  void _scroll(int i) {
+    _scrollController.animateTo(
+      i == 0
+          ? 0.0
+          : i == 1
+              ? MediaQuery.of(context).size.height * 1.05
+              : i == 2
+                  ? MediaQuery.of(context).size.height * 1.98
+                  : i == 3
+                      ? MediaQuery.of(context).size.height * 2.9
+                      : MediaQuery.of(context).size.height * 4,
+      duration: const Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  Widget sectionWidget(int i) {
+    if (i == 0) {
+      return const HomePage();
+    } else if (i == 1) {
+      return const AboutMe();
+    } else if (i == 2) {
+      return const MyServices();
+    } else if (i == 3) {
+      return const MyProject();
+    } else if (i == 4) {
+      return const ContactMe();
+    } else if (i == 5) {
+      return Container();
+    } else {
+      return Container();
+    }
+  }
+
   final List<String> _sectionsName = [
     "HOME",
     "ABOUT",
@@ -23,6 +67,7 @@ class _MainPageState extends State<MainPage> {
     "CONTACT"
   ];
 
+  final ThemeProvider _themeProviders = ThemeProvider();
   final List<IconData> _sectionsIcons = [
     Icons.home,
     Icons.person,
@@ -32,6 +77,37 @@ class _MainPageState extends State<MainPage> {
     Icons.phone,
   ];
   @override
+  @override
+  void initState() {
+    _scrollController = _themeProviders.controller;
+    _scrollController.addListener(() {
+      if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.reverse) {
+        if (!_isScrollingDown) {
+          _isScrollingDown = true;
+          setState(() {});
+        }
+      }
+
+      if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.forward) {
+        if (_isScrollingDown) {
+          _isScrollingDown = false;
+          setState(() {});
+        }
+      }
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    _scrollController.removeListener(() {});
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ScreenHelper(
         desktop: desktop(), mobile: _mobile(), tablet: desktop());
@@ -40,6 +116,7 @@ class _MainPageState extends State<MainPage> {
   _mobile() {
     final themeProv = Provider.of<ThemeProvider>(context);
     return Scaffold(
+      floatingActionButton: const Icon(Icons.arrow_downward_rounded),
       extendBodyBehindAppBar: true,
       backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
       appBar: AppBar(
@@ -55,13 +132,24 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       drawer: _appBarMobile(themeProv),
+      body: SectionsBody(
+        scrollController: _scrollController,
+        sectionsLength: _sectionsIcons.length,
+        sectionWidget: sectionWidget,
+      ),
     );
   }
 
   desktop() {
     final themeProv = Provider.of<ThemeProvider>(context);
     return Scaffold(
+      floatingActionButton: const Icon(Icons.arrow_downward_rounded),
       appBar: _appBarTabDesktop(themeProv),
+      body: SectionsBody(
+        scrollController: _scrollController,
+        sectionsLength: _sectionsIcons.length,
+        sectionWidget: sectionWidget,
+      ),
     );
   }
 
@@ -77,8 +165,7 @@ class _MainPageState extends State<MainPage> {
               height: 60.0,
               child: MaterialButton(
                 hoverColor: kPrimaryColor,
-                //  onPressed: () => _scroll(index),
-                onPressed: () {},
+                onPressed: () => _scroll(index),
                 child: Text(
                   childText,
                   style: TextStyle(
@@ -94,7 +181,7 @@ class _MainPageState extends State<MainPage> {
             child: MaterialButton(
               hoverColor: kPrimaryColor.withAlpha(70),
               onPressed: () {
-                //   _scroll(index);
+                _scroll(index);
                 Navigator.pop(context);
               },
               child: ListTile(
