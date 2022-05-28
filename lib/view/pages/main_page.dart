@@ -5,7 +5,7 @@ import 'package:personal_portfolio/animation/entrancefader.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/screen_helper.dart';
-import 'package:personal_portfolio/view/pages/home_page.dart';
+import 'package:personal_portfolio/view/pages/sections/home/home_page.dart';
 import 'package:personal_portfolio/view/pages/main_section.dart';
 import 'package:personal_portfolio/view/pages/sections/about/aboutme.dart';
 import 'package:personal_portfolio/view/pages/sections/contacts/contact.dart';
@@ -116,7 +116,10 @@ class _MainPageState extends State<MainPage> {
   _mobile() {
     final themeProv = Provider.of<ThemeProvider>(context);
     return Scaffold(
-      floatingActionButton: const Icon(Icons.arrow_downward_rounded),
+      floatingActionButton: _isScrollingDown
+          ? InkWell(
+              onTap: () => _scroll(0), child: const Icon(Icons.arrow_upward))
+          : Container(),
       extendBodyBehindAppBar: true,
       backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
       appBar: AppBar(
@@ -143,7 +146,11 @@ class _MainPageState extends State<MainPage> {
   desktop() {
     final themeProv = Provider.of<ThemeProvider>(context);
     return Scaffold(
-      floatingActionButton: const Icon(Icons.arrow_downward_rounded),
+      backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
+      floatingActionButton: _isScrollingDown
+          ? InkWell(
+              onTap: () => _scroll(0), child: const Icon(Icons.arrow_upward))
+          : Container(),
       appBar: _appBarTabDesktop(themeProv),
       body: SectionsBody(
         scrollController: _scrollController,

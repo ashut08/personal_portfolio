@@ -20,14 +20,15 @@ class _ContactMeState extends State<ContactMe> {
   }
 
   Widget tablet() {
-    return Container(child: Text("tablet"));
+    return const Text("tablet");
   }
 
   Widget desktop() {
-    return Container(child: Text("desktop"));
+    return const Text("desktop");
   }
 
   Widget mobile() {
-    return Container(child: Text("mobile"));
+    // ignore: avoid_unnecessary_containers
+    return Container(child: const Text("mobile"));
   }
 }

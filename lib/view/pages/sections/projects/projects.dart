@@ -20,14 +20,14 @@ class _MyProjectState extends State<MyProject> {
   }
 
   Widget tablet() {
-    return Container(child: Text("tablet"));
+    return const Text("tablet");
   }
 
   Widget desktop() {
-    return Container(child: Text("desktop"));
+    return const Text("desktop");
   }
 
   Widget mobile() {
-    return Container(child: Text("mobile"));
+    return const Text("mobile");
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:personal_portfolio/animation/container_animation.dart';
+import 'package:personal_portfolio/utils/constant.dart';
 
 import 'package:personal_portfolio/utils/screen_helper.dart';
 
@@ -20,14 +22,24 @@ class _AboutMeState extends State<AboutMe> {
   }
 
   Widget tablet() {
-    return Container(child: Text("tablet"));
+    return ContianerAnimation(
+      widget: Image.network(ur),
+    );
   }
 
   Widget desktop() {
-    return Container(child: Text("desktop"));
+    return ContianerAnimation(
+      widget: Image.network(ur),
+      height: 200,
+      width: 300,
+    );
   }
 
   Widget mobile() {
-    return Container(child: Text("mobile"));
+    return ContianerAnimation(
+      widget: Image.network(ur),
+      height: 100,
+      width: 100,
+    );
   }
 }

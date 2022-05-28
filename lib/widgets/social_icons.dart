@@ -28,8 +28,7 @@ class SocialMediaIcon extends StatelessWidget {
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
               border: Border.all(color: kPrimaryColor),
-              color:
-                  !themeProvider.lightTheme ? Colors.white : Colors.transparent,
+              color: themeProvider.lightTheme ? Colors.white : Colors.black,
               shape: BoxShape.circle),
           child: SvgPicture.asset(
             icon!,
@@ -40,7 +39,8 @@ class SocialMediaIcon extends StatelessWidget {
         // onPressed: () => launchURL(
         //   socialLink!,
         // ),
-        hoverColor: kPrimaryColor, onPressed: () {},
+        //hoverColor: kPrimaryColor,
+        onPressed: () {},
       ),
     );
   }

@@ -5,14 +5,14 @@ const Color kPrimaryColor = Color(0xff81230F);
 
 // Social Media
 const kSocialIcons = [
-  "assets/facebook-f-brands.svg",
-  "assets/instagram-brands.svg",
   "assets/linkedin-in-brands.svg",
+  "assets/stackoverflow.svg",
+  "assets/instagram-brands.svg",
+  "assets/medium.svg",
   "assets/twitter-brands.svg",
 ];
 
 const kSocialLinks = [
-  "https://facebook.com/mhmzdev",
   "https://instagram.com/mhmzdev",
   "https://twitter.com/mhmzdev",
   "https://linkedin.com/in/mhmzdev",
@@ -39,7 +39,8 @@ final kCommunityLinks = [
   "https://dsc.community.dev/comsats-university-islamabad/",
   "https://sastaticket.pk/"
 ];
-
+const String ur =
+    "https://previews.123rf.com/images/hozard/hozard1809/hozard180900030/108682479-horizontal-headshot-of-young-handsome-european-caucasian-man-pictured-isolated-on-grey-background-we.jpg";
 // Tools & Tech
 final kTools = [
   "Flutter",
