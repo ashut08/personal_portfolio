@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
+import 'package:personal_portfolio/view/pages/sections/home/components/about_me_button.dart';
 import 'package:personal_portfolio/widgets/social_icons.dart';
 
 Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
@@ -80,7 +81,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
                   speed: const Duration(milliseconds: 100),
                 ),
                 TypewriterAnimatedText(
-                  'Techniacal Writer',
+                  'Technical Writer',
                   textStyle: const TextStyle(
                       fontSize: 32.0,
                       fontWeight: FontWeight.bold,
@@ -109,6 +110,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
         SizedBox(
           height: height * 0.035,
         ),
+        aboutMe(),
         SizedBox(
           height: height * 0.035,
         ),
@@ -123,7 +125,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
                 horizontalPadding: 2.0,
               )
           ],
-        )
+        ),
       ],
     ),
   );

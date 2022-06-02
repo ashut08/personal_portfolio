@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^3.0.0
   animated_text_kit: ^4.2.1
   flutter_svg: ^1.0.3
+  url_launcher: ^6.1.2
 
 dev_dependencies:
   flutter_test:

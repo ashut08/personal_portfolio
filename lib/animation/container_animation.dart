@@ -22,7 +22,7 @@ class _ContianerAnimationState extends State<ContianerAnimation>
     controller = AnimationController(
       vsync: this,
       duration: const Duration(
-        milliseconds: 2000,
+        milliseconds: 5000,
       ),
     );
     animation = controller!
@@ -48,27 +48,30 @@ class _ContianerAnimationState extends State<ContianerAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return getContainer();
+    return Container(
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey,
+          ),
+        ),
+        child: getContainer());
   }
 
-  getContainer() {
-    return SizedBox(
-      height: widget.height,
-      width: widget.width,
-      child: Container(
-        margin: const EdgeInsets.all(2),
-        child: AnimatedBuilder(
-            animation: animation!,
-            builder: (context, child) {
-              return CustomPaint(
-                foregroundPainter: BorderPainter(controller!.value),
-                child: Container(
-                  child: widget.widget,
-                ),
-              );
-            }),
-      ),
-    );
+  Widget getContainer() {
+    return AnimatedBuilder(
+        animation: animation!,
+        builder: (context, child) {
+          return CustomPaint(
+            size: Size.infinite,
+            foregroundPainter: BorderPainter(controller!.value),
+            child: const SizedBox(
+              height: 100,
+              width: 100,
+              //child: widget.widget,
+            ),
+          );
+        });
   }
 }
 
@@ -81,9 +84,9 @@ class BorderPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     double sh = size.height; // For path shortage
     double sw = size.width; // For path shortage
-    double line = 40.0; // Length of the animated line
-    double c1 = controller * 2; // Controller value for top and left border.
-    double c2 = controller >= 0.5
+    double line = 100.0; // Length of the animated line
+    double c1 = controller * 1; // Controller value for top and left border.
+    double c2 = controller >= 2
         ? (controller - 0.5) * 2
         : 0; // Controller value for bottom and right border.
 

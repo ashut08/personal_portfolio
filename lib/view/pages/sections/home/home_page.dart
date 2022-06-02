@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
+import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/screen_helper.dart';
 import 'package:personal_portfolio/utils/sizeconfig.dart';
 import 'package:personal_portfolio/view/pages/sections/home/components/aboutText.dart';
@@ -63,6 +64,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget aboutMe(ThemeProvider themeProvider) {
+    return Container(
+      decoration: const BoxDecoration(color: kPrimaryColor),
+      child: Row(children: const [Text("About Me")]),
     );
   }
 }

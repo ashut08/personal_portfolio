@@ -227,34 +227,6 @@ class _MainPageState extends State<MainPage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], themeProv),
-        EntranceFader(
-          offset: const Offset(0, -10),
-          delay: const Duration(milliseconds: 100),
-          duration: const Duration(milliseconds: 250),
-          child: Container(
-            height: 60.0,
-            width: 120.0,
-            padding: const EdgeInsets.all(8.0),
-            child: MaterialButton(
-              hoverColor: kPrimaryColor.withAlpha(150),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  side: const BorderSide(color: kPrimaryColor)),
-              onPressed: () {
-                // html.window.open(
-                //     'https://drive.google.com/file/d/1FaHIzT9FigDHLx8NlxFIyQfjJTyN9WQ6/view?usp=sharing',
-                //     "pdf");
-              },
-              child: const Text(
-                "RESUME",
-                // style: GoogleFonts.montserrat(
-                //   color: themeProv.lightTheme ? Colors.black : Colors.white,
-                //   fontWeight: FontWeight.w300,
-                // ),
-              ),
-            ),
-          ),
-        ),
         const SizedBox(width: 15.0),
         SizedBox(
           height: 30.0,
@@ -309,40 +281,17 @@ class _MainPageState extends State<MainPage> {
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(150),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      side: const BorderSide(color: kPrimaryColor)),
-                  onPressed: () {
-                    //   launchURL(
-                    //       "https://drive.google.com/file/d/1FaHIzT9FigDHLx8NlxFIyQfjJTyN9WQ6/view?usp=sharing");
-                    // },
-                  },
-                  child: ListTile(
-                    leading: const Icon(
-                      Icons.book,
-                      color: Colors.red,
-                    ),
-                    title: Text(
-                      "RESUME",
-                      style: TextStyle(
-                          color:
-                              theme.lightTheme ? Colors.black : Colors.white),
-                      // style: GoogleFonts.montserrat(
-                      //   fontWeight: FontWeight.w300,
-                      //   color: theme.lightTheme ? Colors.black : Colors.white,
-                      // ),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget aboutMe() {
+    return Container(
+      decoration: const BoxDecoration(color: kPrimaryColor),
+      child: Row(children: const [Text("About Me")]),
     );
   }
 }

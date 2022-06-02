@@ -22,24 +22,36 @@ class _AboutMeState extends State<AboutMe> {
   }
 
   Widget tablet() {
-    return ContianerAnimation(
-      widget: Image.network(ur),
-    );
+    return const Text("About");
+    // return ContianerAnimation(
+    //   widget: Image.network(ur),
+    // );
   }
 
   Widget desktop() {
-    return ContianerAnimation(
-      widget: Image.network(ur),
-      height: 200,
-      width: 300,
-    );
+    return const Text("About");
+    // return Row(
+    //   children: [
+    //     Expanded(
+    //       child: ContianerAnimation(
+    //         widget: Image.network(ur),
+    //         height: 200,
+    //         width: 300,
+    //       ),
+    //     ),
+    //     Expanded(
+    //       child: Container(),
+    //     ),
+    //   ],
+    // );
   }
 
   Widget mobile() {
-    return ContianerAnimation(
-      widget: Image.network(ur),
-      height: 100,
-      width: 100,
-    );
+    return const Text("About");
+    // return ContianerAnimation(
+    //   widget: Image.network(ur),
+    //   height: 100,
+    //   width: 100,
+    // );
   }
 }

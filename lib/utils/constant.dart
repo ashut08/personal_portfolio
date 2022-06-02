@@ -13,11 +13,11 @@ const kSocialIcons = [
 ];
 
 const kSocialLinks = [
-  "https://instagram.com/mhmzdev",
-  "https://twitter.com/mhmzdev",
-  "https://linkedin.com/in/mhmzdev",
-  "https://github.com/mhmzdev",
-  "https://mhmzdev.medium.com"
+  "https://www.linkedin.com/in/ashu8/",
+  "https://www.instagram.com/love_coding_with_ashu/",
+  "https://stackoverflow.com/users/13400001/ashutosh-singh",
+  "https://medium.com/@ashuflutterdev",
+  "https://twitter.com/ashu_080"
 ];
 
 // URL Launcher

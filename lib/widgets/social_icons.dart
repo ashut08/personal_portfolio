@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
+import 'package:url_launcher/url_launcher.dart' as url;
 
 import 'package:provider/provider.dart';
 
@@ -36,11 +37,8 @@ class SocialMediaIcon extends StatelessWidget {
           ),
         ),
         iconSize: height,
-        // onPressed: () => launchURL(
-        //   socialLink!,
-        // ),
-        //hoverColor: kPrimaryColor,
-        onPressed: () {},
+        onPressed: () => url.launchUrl(Uri.parse(socialLink!)),
+        hoverColor: Colors.transparent,
       ),
     );
   }

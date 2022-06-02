@@ -20,14 +20,14 @@ class _MyServicesState extends State<MyServices> {
   }
 
   Widget tablet() {
-    return const Text("tablet");
+    return const Text("Services");
   }
 
   Widget desktop() {
-    return const Text("desktop");
+    return const Text("Services");
   }
 
   Widget mobile() {
-    return const Text("mobile");
+    return const Text("Services");
   }
 }
