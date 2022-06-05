@@ -5,6 +5,7 @@ import 'package:personal_portfolio/animation/entrancefader.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/screen_helper.dart';
+import 'package:personal_portfolio/view/pages/sections/blogs/blogs_page.dart';
 import 'package:personal_portfolio/view/pages/sections/home/home_page.dart';
 import 'package:personal_portfolio/view/pages/main_section.dart';
 import 'package:personal_portfolio/view/pages/sections/about/aboutme.dart';
@@ -227,6 +228,26 @@ class _MainPageState extends State<MainPage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], themeProv),
+        EntranceFader(
+          offset: const Offset(0, -10),
+          delay: const Duration(milliseconds: 100),
+          duration: const Duration(milliseconds: 250),
+          child: Container(
+            padding: const EdgeInsets.all(8.0),
+            height: 60.0,
+            child: MaterialButton(
+              hoverColor: kPrimaryColor,
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const BlogPage())),
+              child: Text(
+                "Blogs".toUpperCase(),
+                style: TextStyle(
+                  color: themeProv.lightTheme ? Colors.black : Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
         const SizedBox(width: 15.0),
         SizedBox(
           height: 30.0,
@@ -281,6 +302,28 @@ class _MainPageState extends State<MainPage> {
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
+              EntranceFader(
+                offset: const Offset(0, -10),
+                delay: const Duration(milliseconds: 100),
+                duration: const Duration(milliseconds: 250),
+                child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  height: 60.0,
+                  child: MaterialButton(
+                    hoverColor: kPrimaryColor,
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BlogPage())),
+                    child: Text(
+                      "Blogs".toUpperCase(),
+                      style: TextStyle(
+                        color: theme.lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
