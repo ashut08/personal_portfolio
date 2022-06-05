@@ -39,6 +39,8 @@ dependencies:
   animated_text_kit: ^4.2.1
   flutter_svg: ^1.0.3
   url_launcher: ^6.1.2
+  flutter_html: 3.0.0-alpha.3
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:

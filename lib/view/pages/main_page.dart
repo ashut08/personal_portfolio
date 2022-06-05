@@ -287,11 +287,4 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
-
-  Widget aboutMe() {
-    return Container(
-      decoration: const BoxDecoration(color: kPrimaryColor),
-      child: Row(children: const [Text("About Me")]),
-    );
-  }
 }

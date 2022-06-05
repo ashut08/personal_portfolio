@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/view/pages/sections/home/components/about_me_button.dart';
 import 'package:personal_portfolio/widgets/social_icons.dart';
 
 Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
@@ -110,7 +109,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
         SizedBox(
           height: height * 0.035,
         ),
-        aboutMe(),
+        //  aboutMe(),
         SizedBox(
           height: height * 0.035,
         ),

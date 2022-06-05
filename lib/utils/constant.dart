@@ -11,7 +11,10 @@ const kSocialIcons = [
   "assets/medium.svg",
   "assets/twitter-brands.svg",
 ];
+//medium blogs url
 
+const String mediumBlogUrl =
+    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ashuflutterdev";
 const kSocialLinks = [
   "https://www.linkedin.com/in/ashu8/",
   "https://www.instagram.com/love_coding_with_ashu/",

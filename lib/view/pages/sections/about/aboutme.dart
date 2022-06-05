@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:personal_portfolio/animation/container_animation.dart';
-import 'package:personal_portfolio/utils/constant.dart';
 
 import 'package:personal_portfolio/utils/screen_helper.dart';
 
