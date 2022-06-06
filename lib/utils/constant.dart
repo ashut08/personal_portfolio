@@ -73,6 +73,8 @@ final kServicesTitles = [
   "Open Source - GitHub",
 ];
 
+const String mediumrl = "https://ashuflutterdev.medium.com/";
+
 // ignore: non_constant_identifier_names
 
 final kServicesDescriptions = [
