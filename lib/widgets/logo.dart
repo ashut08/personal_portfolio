@@ -6,13 +6,17 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(20),
-      height: 100,
-      width: 100,
-      child: Image.asset(
-        "assets/darklogo.png",
-        // color: Colors.transparent,
-      ),
+      decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(image: AssetImage("assets/logo.png"))),
+      // margin: const EdgeInsets.all(20),
+      height: 70,
+      width: 70,
+      // child: Image.asset(
+      //   "assets/logo.png",
+      //   fit: BoxFit.cover,
+      //   // color: Colors.transparent,
+      // ),
     );
   }
 }
@@ -23,10 +27,19 @@ class LightLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(20),
-      height: 100,
-      width: 100,
-      child: Image.asset("assets/lightlogo.png"),
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          image: AssetImage("assets/logo.png"),
+        ),
+      ),
+      // margin: const EdgeInsets.all(20),
+      height: 70,
+      width: 70,
+      // child: Image.asset(
+      //   "assets/logo.png",
+      //   fit: BoxFit.cover,
+      // ),
     );
   }
 }

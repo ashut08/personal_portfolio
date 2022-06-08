@@ -101,10 +101,10 @@ class _BlogPageState extends State<BlogPage> {
         ],
       ),
       body: _isLoading
-          ? const SizedBox(
-              height: 50,
-              width: 50,
-              child: Center(
+          ? const Center(
+              child: SizedBox(
+                height: 50,
+                width: 50,
                 child: CircularProgressIndicator(),
               ),
             )

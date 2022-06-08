@@ -14,9 +14,9 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
         Text(
           "Hello",
           style: GoogleFonts.montserrat(
-              fontSize: height! * 0.025,
+              fontSize: height! * 0.055,
               color: themeProvider.lightTheme ? Colors.black : Colors.white,
-              fontWeight: FontWeight.w200),
+              fontWeight: FontWeight.w600),
         ),
         SizedBox(
           height: height * 0.01,
@@ -30,7 +30,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
                     fontSize: height * 0.055,
                     color:
                         themeProvider.lightTheme ? Colors.black : Colors.white,
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w600,
                     letterSpacing: 1.1),
               ),
               TextSpan(
@@ -38,7 +38,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
                 style: GoogleFonts.montserrat(
                     fontSize: height * 0.055,
                     color: kPrimaryColor,
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w900,
                     letterSpacing: 1.1),
               ),
               TextSpan(
@@ -47,7 +47,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
                     fontSize: height * 0.055,
                     color:
                         themeProvider.lightTheme ? Colors.black : Colors.white,
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w600,
                     letterSpacing: 1.1),
               ),
             ],
@@ -63,37 +63,41 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
               animatedTexts: [
                 TypewriterAnimatedText(
                   'I\'m  Mobile App Developer',
-                  textStyle: const TextStyle(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      color: kPrimaryColor),
+                  textStyle: GoogleFonts.montserrat(
+                      fontSize: height * 0.035,
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.1),
                   cursor: '|',
                   speed: const Duration(milliseconds: 100),
                 ),
                 TypewriterAnimatedText(
                   'Flutter Developer',
-                  textStyle: const TextStyle(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      color: kPrimaryColor),
+                  textStyle: GoogleFonts.montserrat(
+                      fontSize: height * 0.035,
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.1),
                   cursor: ' | ',
                   speed: const Duration(milliseconds: 100),
                 ),
                 TypewriterAnimatedText(
                   'Technical Writer',
-                  textStyle: const TextStyle(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      color: kPrimaryColor),
+                  textStyle: GoogleFonts.montserrat(
+                      fontSize: height * 0.035,
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.1),
                   cursor: '|',
                   speed: const Duration(milliseconds: 100),
                 ),
                 TypewriterAnimatedText(
                   'Hello world!',
-                  textStyle: const TextStyle(
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      color: kPrimaryColor),
+                  textStyle: GoogleFonts.montserrat(
+                      fontSize: height * 0.035,
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.1),
                   cursor: '|',
                   speed: const Duration(milliseconds: 100),
                 ),
