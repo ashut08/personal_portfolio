@@ -111,7 +111,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return ScreenHelper(
-        desktop: desktop(), mobile: _mobile(), tablet: desktop());
+        desktop: desktop(), mobile: _mobile(), tablet: _mobile());
   }
 
   _mobile() {

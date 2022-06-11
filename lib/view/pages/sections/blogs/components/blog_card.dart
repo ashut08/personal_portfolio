@@ -37,12 +37,14 @@ class _BLogCardState extends State<BLogCard> {
         onHover: (value) {
           if (value) {
             setState(() {
+              isHover = true;
               elevation = 1.3;
-              scale = 1.07;
+              scale = 1.1;
               translate = const Offset(2, 2);
             });
           } else {
             setState(() {
+              isHover = false;
               elevation = 1;
               scale = 1;
               translate = const Offset(0, 0);
@@ -74,7 +76,9 @@ class _BLogCardState extends State<BLogCard> {
                           ),
                   ],
                 ),
-                margin: const EdgeInsets.all(10),
+                margin: isHover
+                    ? const EdgeInsets.all(20)
+                    : const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 // height: height! * 0.3,
                 width: width,

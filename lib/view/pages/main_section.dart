@@ -19,6 +19,7 @@ class SectionsBody extends StatelessWidget {
       child: ListView.builder(
         // physics: !kIsWeb ? ScrollPhysics() : NeverScrollableScrollPhysics(),
         controller: scrollController,
+        shrinkWrap: true,
         itemCount: sectionsLength,
         itemBuilder: (context, index) => sectionWidget(index),
       ),

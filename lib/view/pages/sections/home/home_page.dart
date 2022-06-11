@@ -20,13 +20,38 @@ class _HomePageState extends State<HomePage> {
     SizeConfig().init(context);
     var height = SizeConfig.screenHeight;
     var width = SizeConfig.screenWidth;
-    return ScreenHelper.isMobile(context)
-        ? mobileView(height, width, themeProvider)
-        : desktopView(height, width, themeProvider);
+    return ScreenHelper(
+      desktop: desktopView(height, width, themeProvider),
+      mobile: mobileView(height, width, themeProvider),
+      tablet: TabView(height, width, themeProvider),
+    );
   }
 
   Stack mobileView(double? height, double? width, ThemeProvider themeProvider) {
     return Stack(
+      alignment: Alignment.center,
+      children: [
+        ///background image
+        ///
+        Container(
+          color: themeProvider.lightTheme ? Colors.white : Colors.black,
+          child: Image.network(
+            "https://previews.123rf.com/images/hozard/hozard1809/hozard180900030/108682479-horizontal-headshot-of-young-handsome-european-caucasian-man-pictured-isolated-on-grey-background-we.jpg",
+            height: height,
+            fit: BoxFit.cover,
+            width: width,
+          ),
+        ),
+
+        ///about section start here
+        aboutSectionWidget(height, themeProvider)
+      ],
+    );
+  }
+
+  Stack TabView(double? height, double? width, ThemeProvider themeProvider) {
+    return Stack(
+      alignment: Alignment.topRight,
       children: [
         ///background image
         ///

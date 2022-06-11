@@ -12,7 +12,9 @@ const kSocialIcons = [
   "assets/twitter-brands.svg",
 ];
 //medium blogs url
-
+SizedBox size10 = const SizedBox(
+  height: 10,
+);
 const String mediumBlogUrl =
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ashuflutterdev";
 const kSocialLinks = [
@@ -36,12 +38,9 @@ const String ur =
 final kTools = [
   "Flutter",
   "Dart",
-  "Python",
-  "Java",
-  "C++",
-  "HTML",
-  "CSS",
-  "Bootstrap"
+  "Kotlin",
+  "Swift",
+  "Git",
 ];
 
 // services
