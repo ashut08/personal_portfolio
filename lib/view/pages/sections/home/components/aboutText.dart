@@ -56,6 +56,7 @@ Container aboutSectionWidget(double? height, ThemeProvider themeProvider) {
                 ),
               ],
             ),
+            textAlign: TextAlign.center,
           ),
         ),
 

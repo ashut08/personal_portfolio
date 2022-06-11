@@ -6,7 +6,7 @@ class AboutUtils {
 
   static const String email = "ashusingh.unch8@gmail.com";
   static const String dob = "08-09-1998";
-  static const String addreess = "Raebareli, India-229401";
+  static const String addreess = "Raebareli, India-229401      ";
   static const String name = "Ashutosh Singh";
 
   static const String resumeurl =

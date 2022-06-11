@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
 import 'package:personal_portfolio/utils/screen_helper.dart';
+import 'package:personal_portfolio/view/pages/sections/services/mobile_desktop.dart';
+import 'package:personal_portfolio/view/pages/sections/services/mobile_service.dart';
+import 'package:personal_portfolio/view/pages/sections/services/mobile_tab.dart';
 
 class MyServices extends StatefulWidget {
   const MyServices({Key? key}) : super(key: key);
@@ -12,22 +15,10 @@ class MyServices extends StatefulWidget {
 class _MyServicesState extends State<MyServices> {
   @override
   Widget build(BuildContext context) {
-    return ScreenHelper(
-      tablet: tablet(),
-      desktop: desktop(),
-      mobile: mobile(),
+    return const ScreenHelper(
+      tablet: ServiceTab(),
+      desktop: ServiceDesktop(),
+      mobile: ServiceMobile(),
     );
-  }
-
-  Widget tablet() {
-    return const Text("Services");
-  }
-
-  Widget desktop() {
-    return const Text("Services");
-  }
-
-  Widget mobile() {
-    return const Text("Services");
   }
 }

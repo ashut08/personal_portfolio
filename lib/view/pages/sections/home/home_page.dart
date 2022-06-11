@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     return ScreenHelper(
       desktop: desktopView(height, width, themeProvider),
       mobile: mobileView(height, width, themeProvider),
-      tablet: TabView(height, width, themeProvider),
+      tablet: tabView(height, width, themeProvider),
     );
   }
 
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Stack TabView(double? height, double? width, ThemeProvider themeProvider) {
+  Stack tabView(double? height, double? width, ThemeProvider themeProvider) {
     return Stack(
       alignment: Alignment.topRight,
       children: [

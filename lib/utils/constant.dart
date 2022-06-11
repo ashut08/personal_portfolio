@@ -10,6 +10,7 @@ const kSocialIcons = [
   "assets/instagram-brands.svg",
   "assets/medium.svg",
   "assets/twitter-brands.svg",
+  "assets/github-brands.svg"
 ];
 //medium blogs url
 SizedBox size10 = const SizedBox(
@@ -22,7 +23,8 @@ const kSocialLinks = [
   "https://stackoverflow.com/users/13400001/ashutosh-singh",
   "https://www.instagram.com/love_coding_with_ashu/",
   "https://medium.com/@ashuflutterdev",
-  "https://twitter.com/ashu_080"
+  "https://twitter.com/ashu_080",
+  "https://github.com/ashut08"
 ];
 
 // URL Launcher

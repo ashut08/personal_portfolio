@@ -4,6 +4,7 @@ import 'package:personal_portfolio/utils/about_utils.dart';
 import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/sizeconfig.dart';
 import 'package:personal_portfolio/view/pages/sections/about/components/about_info_data.dart';
+import 'package:personal_portfolio/view/pages/sections/about/components/about_me_header.dart';
 import 'package:personal_portfolio/view/pages/sections/about/components/resume_download_button.dart';
 import 'package:personal_portfolio/view/pages/sections/about/components/tech_widget.dart';
 import 'package:provider/provider.dart';
@@ -35,35 +36,8 @@ class AboutMoile extends StatelessWidget {
             ),
           ),
         ),
-        Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            Center(
-              child: Text(
-                "About Me".toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: height * 0.065,
-                  color: themeProvider.lightTheme
-                      ? Colors.black.withOpacity(0.2)
-                      : Colors.white.withOpacity(0.2),
-                ),
-              ),
-            ),
-            const Positioned(
-              bottom: 8,
-              child: Text(
-                AboutUtils.aboutMeHeadline,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-            ),
-          ],
-        ),
+        size10,
+        const AboutMeHeader(),
         const SizedBox(
           height: 10,
         ),
