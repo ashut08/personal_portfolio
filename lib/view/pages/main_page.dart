@@ -74,7 +74,7 @@ class _MainPageState extends State<MainPage> {
     Icons.person,
     Icons.settings,
     Icons.build,
-    Icons.article,
+    //Icons.article,
     Icons.phone,
   ];
   @override
@@ -307,6 +307,7 @@ class _MainPageState extends State<MainPage> {
                 delay: const Duration(milliseconds: 100),
                 duration: const Duration(milliseconds: 250),
                 child: Container(
+                  margin: const EdgeInsets.only(right: 20, left: 20),
                   padding: const EdgeInsets.all(8.0),
                   height: 60.0,
                   child: MaterialButton(
@@ -315,11 +316,23 @@ class _MainPageState extends State<MainPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const BlogPage())),
-                    child: Text(
-                      "Blogs".toUpperCase(),
-                      style: TextStyle(
-                        color: theme.lightTheme ? Colors.black : Colors.white,
-                      ),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.article_outlined,
+                          color: kPrimaryColor,
+                        ),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          "Blogs".toUpperCase(),
+                          style: TextStyle(
+                            color:
+                                theme.lightTheme ? Colors.black : Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

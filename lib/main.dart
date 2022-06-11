@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_portfolio/provider/blogs_provider.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/view/pages/splash_screen.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
+          textTheme: GoogleFonts.montserratTextTheme(
+            Theme.of(context).textTheme,
+          ),
           primarySwatch: Colors.blue,
         ),
         home: const SplashScreen(),

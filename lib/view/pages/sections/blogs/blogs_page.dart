@@ -117,34 +117,42 @@ class _BlogPageState extends State<BlogPage> {
                     return BLogCard(
                       item: cardProvider.getBlogList()![index],
                     );
-                  })
+                  },
+                )
               : ScreenHelper.isTablet(context)
-                  ? GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 4.0,
-                        mainAxisSpacing: 4.0,
+                  ? LayoutBuilder(
+                      builder: (context, constraints) => GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio:
+                              constraints.biggest.aspectRatio * 3 / 2,
+                          // crossAxisSpacing: 5.0,
+                          // mainAxisSpacing: 5.0,
+                        ),
+                        itemCount: cardProvider.getBlogList()!.length,
+                        itemBuilder: (context, i) {
+                          return BLogCard(
+                            item: cardProvider.getBlogList()![i],
+                          );
+                        },
                       ),
-                      itemCount: cardProvider.getBlogList()!.length,
-                      itemBuilder: (context, i) {
-                        return BLogCard(
-                          item: cardProvider.getBlogList()![i],
-                        );
-                      })
-                  : GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 4.0,
-                        mainAxisSpacing: 4.0,
+                    )
+                  : LayoutBuilder(
+                      builder: (context, constraints) => GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio:
+                              constraints.biggest.aspectRatio * 1 / 2.8,
+                          crossAxisSpacing: 5.0,
+                          mainAxisSpacing: 5.0,
+                        ),
+                        itemCount: cardProvider.getBlogList()!.length,
+                        itemBuilder: (context, i) {
+                          return BLogCard(
+                            item: cardProvider.getBlogList()![i],
+                          );
+                        },
                       ),
-                      itemCount: cardProvider.getBlogList()!.length,
-                      itemBuilder: (context, i) {
-                        return BLogCard(
-                          item: cardProvider.getBlogList()![i],
-                        );
-                      },
                     ),
     );
   }
