@@ -8,6 +8,7 @@ class AboutUtils {
   static const String dob = "08-09-1998";
   static const String addreess = "Raebareli, India-229401      ";
   static const String name = "Ashutosh Singh";
+  static const String mobileNo = "+916393675500 , +917309453580";
 
   static const String resumeurl =
       "https://drive.google.com/file/d/1FNcd3KABxfJzhm_lu3UO86pZNmXS8u_j/view?usp=sharing";
