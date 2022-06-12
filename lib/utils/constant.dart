@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Colors
 const Color kPrimaryColor = Color(0xff81230F);
+const Color kSecondryColor = Color(0xffF79F1F);
 
 // Social Media
 const kSocialIcons = [

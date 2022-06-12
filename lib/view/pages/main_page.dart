@@ -163,7 +163,7 @@ class _MainPageState extends State<MainPage> {
 
   Widget _appBarActions(
       String childText, int index, IconData icon, ThemeProvider themeProvider) {
-    return MediaQuery.of(context).size.width > 760
+    return ScreenHelper.isDesktop(context)
         ? EntranceFader(
             offset: const Offset(0, -10),
             delay: const Duration(milliseconds: 100),
