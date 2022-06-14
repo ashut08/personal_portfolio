@@ -65,7 +65,10 @@ class AboutTab extends StatelessWidget {
               const Center(
                 child: Text(
                   "Technologies I Have Worked With:",
-                  style: TextStyle(color: kPrimaryColor),
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               size10,

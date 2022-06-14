@@ -45,14 +45,21 @@ class ContactTab extends StatelessWidget {
         ),
         size10,
         size10,
-        Row(
-          children: const [
-            Expanded(
-              flex: 1,
-              child: AllContactLink(),
-            ),
-            Expanded(child: ContactForm())
-          ],
+        Container(
+          margin: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              border: Border.all(color: kPrimaryColor),
+              borderRadius: BorderRadius.circular(6)),
+          child: Row(
+            children: const [
+              Expanded(
+                flex: 1,
+                child: AllContactLink(),
+              ),
+              Expanded(child: ContactForm())
+            ],
+          ),
         )
       ],
     );

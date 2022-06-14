@@ -45,13 +45,28 @@ class ContactDesktop extends StatelessWidget {
         ),
         size10,
         size10,
-        Row(
-          children: const [
-            Expanded(
-              child: AllContactLink(),
-            ),
-            Expanded(child: ContactForm())
-          ],
+        Container(
+          margin: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              border: Border.all(color: kPrimaryColor),
+              borderRadius: BorderRadius.circular(6)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              Expanded(
+                child: AllContactLink(),
+              ),
+              // Flexible(
+              //   child: Container(
+              //     color: kPrimaryColor,
+              //     width: 10,
+              //     //height: double.infinity,
+              //   ),
+              // ),
+              Expanded(child: ContactForm())
+            ],
+          ),
         )
       ],
     );

@@ -44,7 +44,7 @@ class ServiceCard extends StatelessWidget {
                 Text(
                   serviceName!,
                   style: TextStyle(
-                      fontSize: height! * 0.023,
+                      fontSize: height! * 0.028,
                       color: kPrimaryColor,
                       fontWeight: FontWeight.w900),
                 ),
@@ -52,9 +52,11 @@ class ServiceCard extends StatelessWidget {
                 size10,
                 Text(
                   serviceDescription!,
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: height * 0.015,
+                    fontSize: height * 0.020,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.5,
                     color:
                         themeProvider.lightTheme ? Colors.black : Colors.white,
                   ),

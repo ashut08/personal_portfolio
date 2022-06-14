@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:personal_portfolio/animation/entrancefader.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
@@ -119,7 +120,16 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       floatingActionButton: _isScrollingDown
           ? InkWell(
-              onTap: () => _scroll(0), child: const Icon(Icons.arrow_upward))
+              onTap: () => _scroll(0),
+              child: Transform.rotate(
+                angle: -340,
+                child: SvgPicture.asset(
+                  "assets/rocket-svgrepo-com.svg",
+                  height: 40,
+                  color: kSecondryColor,
+                ),
+              ),
+            )
           : Container(),
       extendBodyBehindAppBar: true,
       backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
@@ -150,7 +160,16 @@ class _MainPageState extends State<MainPage> {
       backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
       floatingActionButton: _isScrollingDown
           ? InkWell(
-              onTap: () => _scroll(0), child: const Icon(Icons.arrow_upward))
+              onTap: () => _scroll(0),
+              child: Transform.rotate(
+                angle: -340,
+                child: SvgPicture.asset(
+                  "assets/rocket-svgrepo-com.svg",
+                  height: 40,
+                  color: kSecondryColor,
+                ),
+              ),
+            )
           : Container(),
       appBar: _appBarTabDesktop(themeProv),
       body: SectionsBody(

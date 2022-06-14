@@ -5,37 +5,37 @@ class ServiceUtils {
     ServiceModel(
       serviceName: "Web Development",
       serviceDescription:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!",
+          "Build web app using flutter and react.js.\n Provide end to end service from building to deploying. \n CI/CD pipeline. \n AWS services.  ",
       serviceImage: "assets/sitemap-solid.svg",
     ),
     ServiceModel(
       serviceName: "Mobile Development",
       serviceDescription:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!",
+          "Build mobile apps using flutter. \n Provide end-to-end development services for mobile apps for Android as well as iOS platforms.",
       serviceImage: "assets/mobile-alt-solid.svg",
     ),
     ServiceModel(
       serviceName: "Rapid Development",
       serviceDescription:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!",
+          "Provide Working  MVP of the products.\n Quick and working prototype ",
       serviceImage: "assets/rapid_development.svg",
     ),
     ServiceModel(
       serviceName: "UI/UX Design",
       serviceDescription:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!",
+          "Full range of web and mobile app design services.\n from prototyping and graphic design to pixel-perfect UI.",
       serviceImage: "assets/palette-solid.svg",
     ),
     ServiceModel(
       serviceName: "Open Source",
       serviceDescription:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!",
+          "Well documentation.\n Well written README.md files\n ",
       serviceImage: "assets/code-solid.svg",
     ),
     ServiceModel(
-      serviceName: "Database Analysis",
+      serviceName: "Technical Blogger",
       serviceDescription:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!",
+          "SEO friendly blog. \n Write technical blog on medium\n Grammatical error-free blogss.",
       serviceImage: "assets/database-solid.svg",
     ),
   ];

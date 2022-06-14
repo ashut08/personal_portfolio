@@ -48,7 +48,7 @@ class AllContactLink extends StatelessWidget {
       String image, String name, String description, BuildContext context) {
     final themeProv = Provider.of<ThemeProvider>(context);
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         SvgPicture.asset(
           image,
