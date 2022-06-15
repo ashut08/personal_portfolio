@@ -29,13 +29,13 @@ class ServiceUtils {
     ServiceModel(
       serviceName: "Open Source",
       serviceDescription:
-          "Well documentation.\n Well written README.md files\n ",
+          "Well documentation.\n Well written README.md files.\n ",
       serviceImage: "assets/code-solid.svg",
     ),
     ServiceModel(
       serviceName: "Technical Blogger",
       serviceDescription:
-          "SEO friendly blog. \n Write technical blog on medium\n Grammatical error-free blogss.",
+          "SEO friendly blog. \n Write technical blogs on Medium\n Grammatical error-free blogs.",
       serviceImage: "assets/database-solid.svg",
     ),
   ];

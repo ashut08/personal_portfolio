@@ -20,14 +20,14 @@ class _MyProjectState extends State<MyProject> {
   }
 
   Widget tablet() {
-    return const Text("Projects");
+    return const Text("");
   }
 
   Widget desktop() {
-    return const Text("Projects");
+    return const Text("");
   }
 
   Widget mobile() {
-    return const Text("Projects");
+    return const Text("");
   }
 }

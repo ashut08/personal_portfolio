@@ -8,7 +8,7 @@ class Logo extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           shape: BoxShape.circle,
-          image: DecorationImage(image: AssetImage("assets/logo.png"))),
+          image: DecorationImage(image: AssetImage("assets/logo_light.png"))),
       // margin: const EdgeInsets.all(20),
       height: 70,
       width: 70,
@@ -30,7 +30,7 @@ class LightLogo extends StatelessWidget {
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: AssetImage("assets/logo.png"),
+          image: AssetImage("assets/logo_dark.png"),
         ),
       ),
       // margin: const EdgeInsets.all(20),
