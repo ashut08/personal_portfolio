@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Ashutosh',
         theme: ThemeData(
           textTheme: GoogleFonts.montserratTextTheme(
             Theme.of(context).textTheme,

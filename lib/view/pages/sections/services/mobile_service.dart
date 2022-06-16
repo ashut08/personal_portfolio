@@ -59,8 +59,8 @@ class _ServiceMobileState extends State<ServiceMobile> {
         CarouselSlider.builder(
             itemCount: ServiceUtils.serviceUtils.length,
             options: CarouselOptions(
-                viewportFraction: 0.7,
-                aspectRatio: 3 / 2.2,
+                viewportFraction: 0.8,
+                aspectRatio: 16 / 15,
                 autoPlay: true,
                 onPageChanged: (index, reason) {
                   setState(() {

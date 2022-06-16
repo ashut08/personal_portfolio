@@ -28,7 +28,7 @@ class ServiceCard extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(20),
           margin: const EdgeInsets.all(20),
-          width: MediaQuery.of(context).size.width / 2,
+          //width: MediaQuery.of(context).size.width / 2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
@@ -36,34 +36,33 @@ class ServiceCard extends StatelessWidget {
               width: 4,
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Column(
-              children: [
-                size10,
-                Text(
-                  serviceName!,
-                  style: TextStyle(
-                      fontSize: height! * 0.028,
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.w900),
+          child: Column(
+            children: [
+              size10,
+              size10,
+              size10,
+              Text(
+                serviceName!,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: height! * 0.028,
+                    color: kPrimaryColor,
+                    fontWeight: FontWeight.w900),
+              ),
+              size10,
+              size10,
+              Text(
+                serviceDescription!,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: height * 0.020,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.5,
+                  color: themeProvider.lightTheme ? Colors.black : Colors.white,
                 ),
-                size10,
-                size10,
-                Text(
-                  serviceDescription!,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: height * 0.020,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 1.5,
-                    color:
-                        themeProvider.lightTheme ? Colors.black : Colors.white,
-                  ),
-                ),
-                size10,
-              ],
-            ),
+              ),
+              size10,
+            ],
           ),
         ),
         Container(

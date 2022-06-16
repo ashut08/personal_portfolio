@@ -36,7 +36,7 @@ class ServiceUtils {
       serviceName: "Technical Blogger",
       serviceDescription:
           "SEO friendly blog. \n Write technical blogs on Medium\n Grammatical error-free blogs.",
-      serviceImage: "assets/database-solid.svg",
+      serviceImage: "assets/pencil-solid.svg",
     ),
   ];
 }
