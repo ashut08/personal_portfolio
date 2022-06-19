@@ -118,9 +118,9 @@ class HomeMobile extends StatelessWidget {
                       AnimatedTextKit(
                         animatedTexts: [
                           TypewriterAnimatedText(
-                            'I\'m  Mobile App Developer',
+                            'Mobile Apps Developer',
                             textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.035,
+                                fontSize: height * 0.030,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: 1.1),
@@ -130,7 +130,7 @@ class HomeMobile extends StatelessWidget {
                           TypewriterAnimatedText(
                             'Flutter Developer',
                             textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.035,
+                                fontSize: height * 0.03,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: 1.1),
@@ -140,6 +140,16 @@ class HomeMobile extends StatelessWidget {
                           TypewriterAnimatedText(
                             'Technical Writer',
                             textStyle: GoogleFonts.montserrat(
+                                fontSize: height * 0.030,
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.1),
+                            cursor: '|',
+                            speed: const Duration(milliseconds: 100),
+                          ),
+                          TypewriterAnimatedText(
+                            'Web Developer',
+                            textStyle: GoogleFonts.montserrat(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
@@ -148,7 +158,17 @@ class HomeMobile extends StatelessWidget {
                             speed: const Duration(milliseconds: 100),
                           ),
                           TypewriterAnimatedText(
-                            'Hello world!',
+                            'DevOps enthusiastic',
+                            textStyle: GoogleFonts.montserrat(
+                                fontSize: height * 0.035,
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.1),
+                            cursor: '|',
+                            speed: const Duration(milliseconds: 100),
+                          ),
+                          TypewriterAnimatedText(
+                            'UI/UX enthusiastic',
                             textStyle: GoogleFonts.montserrat(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,

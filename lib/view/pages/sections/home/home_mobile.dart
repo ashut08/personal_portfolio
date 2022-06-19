@@ -22,7 +22,7 @@ class HomeDesktop extends StatelessWidget {
         children: [
           Positioned(
             top: width < 1200 ? height * 0.15 : height * 0.1,
-            right: width * 0.01,
+            right: 0,
             child: Opacity(
               opacity: 0.9,
               child: EntranceFader(
@@ -108,7 +108,7 @@ class HomeDesktop extends StatelessWidget {
                       AnimatedTextKit(
                         animatedTexts: [
                           TypewriterAnimatedText(
-                            'I\'m  Mobile App Developer',
+                            ' Mobile Apps Developer',
                             textStyle: GoogleFonts.montserrat(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
@@ -138,7 +138,17 @@ class HomeDesktop extends StatelessWidget {
                             speed: const Duration(milliseconds: 100),
                           ),
                           TypewriterAnimatedText(
-                            'Hello world!',
+                            'DevOps enthusiastic',
+                            textStyle: GoogleFonts.montserrat(
+                                fontSize: height * 0.035,
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.1),
+                            cursor: '|',
+                            speed: const Duration(milliseconds: 100),
+                          ),
+                          TypewriterAnimatedText(
+                            'UI/UX enthusiastic',
                             textStyle: GoogleFonts.montserrat(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,

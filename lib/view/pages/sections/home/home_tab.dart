@@ -118,7 +118,7 @@ class HomeTab extends StatelessWidget {
                       AnimatedTextKit(
                         animatedTexts: [
                           TypewriterAnimatedText(
-                            'I\'m  Mobile App Developer',
+                            ' Mobile App Developer',
                             textStyle: GoogleFonts.montserrat(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
@@ -148,7 +148,17 @@ class HomeTab extends StatelessWidget {
                             speed: const Duration(milliseconds: 100),
                           ),
                           TypewriterAnimatedText(
-                            'Hello world!',
+                            'DevOps enthusiastic',
+                            textStyle: GoogleFonts.montserrat(
+                                fontSize: height * 0.035,
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.1),
+                            cursor: '|',
+                            speed: const Duration(milliseconds: 100),
+                          ),
+                          TypewriterAnimatedText(
+                            'UI/UX enthusiastic',
                             textStyle: GoogleFonts.montserrat(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
