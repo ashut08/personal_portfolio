@@ -30,9 +30,10 @@ class AboutTab extends StatelessWidget {
               //   height: height! / 2.6,
               color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
               child: Container(
+                height: height! * 0.7,
                 padding: const EdgeInsets.all(6),
-                child: Image.network(
-                  "https://previews.123rf.com/images/hozard/hozard1809/hozard180900030/108682479-horizontal-headshot-of-young-handsome-european-caucasian-man-pictured-isolated-on-grey-background-we.jpg",
+                child: Image.asset(
+                  "assets/dpimage/image.jpeg",
                   fit: BoxFit.cover,
                 ),
               ),
@@ -42,79 +43,83 @@ class AboutTab extends StatelessWidget {
             width: 10,
           ),
           Expanded(
+              flex: width! < 1230 ? 2 : 1,
               child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const AboutMeHeader(),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(AboutUtils.aboutMeDetail,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    fontSize: 18,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AboutMeHeader(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(AboutUtils.aboutMeDetail,
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: themeProvider.lightTheme
+                            ? Colors.black
+                            : Colors.white,
+                      )),
+                  // size10,
+                  Divider(
+                    height: 15,
                     color:
                         themeProvider.lightTheme ? Colors.black : Colors.white,
-                  )),
-              // size10,
-              Divider(
-                height: 15,
-                color: themeProvider.lightTheme ? Colors.black : Colors.white,
-              ),
-              size10,
-              const Center(
-                child: Text(
-                  "Technologies I Have Worked With:",
-                  style: TextStyle(
-                      fontSize: 18,
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              size10,
-              Row(
-                // alignment: WrapAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: kTools
-                    .map(
-                      (e) => ToolTechWidget(techName: e),
-                    )
-                    .toList(),
-              ),
-              size10,
-              Divider(
-                color: themeProvider.lightTheme ? Colors.black : Colors.white,
-              ),
-              size10,
-              const AboutMeData(
-                alignment: Alignment.topLeft,
-                data: "Name",
-                information: AboutUtils.name,
-              ),
-              size10,
-              const AboutMeData(
-                alignment: Alignment.topLeft,
-                data: "Email",
-                information: AboutUtils.email,
-              ),
-              size10,
-              AboutMeData(
-                alignment: Alignment.topLeft,
-                data: "Age",
-                information:
-                    AboutUtils().ageCalculate(AboutUtils.dob).toString(),
-              ),
-              size10,
-              const AboutMeData(
-                alignment: Alignment.topLeft,
-                data: "Address",
-                information: AboutUtils.addreess,
-              ),
-              size10,
-              size10,
-              const ResumeDownloadButton()
-            ],
-          ))
+                  ),
+                  size10,
+                  const Center(
+                    child: Text(
+                      "Technologies I Have Worked With:",
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  size10,
+                  Row(
+                    // alignment: WrapAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: kTools
+                        .map(
+                          (e) => ToolTechWidget(techName: e),
+                        )
+                        .toList(),
+                  ),
+                  size10,
+                  Divider(
+                    color:
+                        themeProvider.lightTheme ? Colors.black : Colors.white,
+                  ),
+                  size10,
+                  const AboutMeData(
+                    alignment: Alignment.topLeft,
+                    data: "Name",
+                    information: AboutUtils.name,
+                  ),
+                  size10,
+                  const AboutMeData(
+                    alignment: Alignment.topLeft,
+                    data: "Email",
+                    information: AboutUtils.email,
+                  ),
+                  size10,
+                  AboutMeData(
+                    alignment: Alignment.topLeft,
+                    data: "Age",
+                    information:
+                        AboutUtils().ageCalculate(AboutUtils.dob).toString(),
+                  ),
+                  size10,
+                  const AboutMeData(
+                    alignment: Alignment.topLeft,
+                    data: "Address",
+                    information: AboutUtils.addreess,
+                  ),
+                  size10,
+                  size10,
+                  const ResumeDownloadButton()
+                ],
+              ))
         ],
       ),
     );

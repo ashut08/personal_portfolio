@@ -23,16 +23,19 @@ class AboutMoile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Container(
-          height: height! / 2.5,
-          width: width,
-          //   margin: const EdgeInsets.all(10),
-          color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
+        Center(
           child: Container(
-            padding: const EdgeInsets.all(6),
-            child: Image.network(
-              "https://previews.123rf.com/images/hozard/hozard1809/hozard180900030/108682479-horizontal-headshot-of-young-handsome-european-caucasian-man-pictured-isolated-on-grey-background-we.jpg",
-              fit: BoxFit.cover,
+            height: height! * 0.6,
+            width: width! / 2,
+            //   margin: const EdgeInsets.all(10),
+            color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
+            child: Container(
+              height: height * 0.6,
+              padding: const EdgeInsets.all(6),
+              child: Image.asset(
+                "assets/dpimage/image.jpeg",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
