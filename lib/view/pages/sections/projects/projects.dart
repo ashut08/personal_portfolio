@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 import 'package:personal_portfolio/utils/screen_helper.dart';
+import 'package:personal_portfolio/view/pages/sections/projects/projects_desktop.dart';
+import 'package:personal_portfolio/view/pages/sections/projects/projects_mobile.dart';
 
 class MyProject extends StatefulWidget {
   const MyProject({Key? key}) : super(key: key);
@@ -12,22 +14,10 @@ class MyProject extends StatefulWidget {
 class _MyProjectState extends State<MyProject> {
   @override
   Widget build(BuildContext context) {
-    return ScreenHelper(
-      tablet: tablet(),
-      desktop: desktop(),
-      mobile: mobile(),
+    return const ScreenHelper(
+      tablet: ProjectDesktop(),
+      desktop: ProjectDesktop(),
+      mobile: ProjectsMobile(),
     );
-  }
-
-  Widget tablet() {
-    return const Text("");
-  }
-
-  Widget desktop() {
-    return const Text("");
-  }
-
-  Widget mobile() {
-    return const Text("");
   }
 }

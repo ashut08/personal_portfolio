@@ -57,6 +57,20 @@ class ServiceDesktop extends StatelessWidget {
   }
 
   Widget _buildServiceCard(List<ServiceModel> serviceModel) {
+    // return Wrap(
+    //   direction: Axis.horizontal,
+    //   alignment: WrapAlignment.center,
+    //   crossAxisAlignment: WrapCrossAlignment.center,
+    //   runSpacing: AppDimensions.normalize(10),
+    //   children:serviceModel
+    //       .map<Widget>(
+    //         (
+    //           e,
+    //         ) =>
+    //           ServiceCard(image: e)
+    //       )
+    //       .toList(),
+    // );
     return LayoutBuilder(
       builder: (context, constraints) => GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
