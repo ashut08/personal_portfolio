@@ -34,6 +34,7 @@ class SocialMediaIcon extends StatelessWidget {
           child: SvgPicture.asset(
             icon!,
             color: kPrimaryColor,
+            height: 40,
           ),
         ),
         iconSize: height,

@@ -56,12 +56,19 @@ class _ServiceMobileState extends State<ServiceMobile> {
             ),
           ],
         ),
+        size10,
+        size10,
         CarouselSlider.builder(
             itemCount: ServiceUtils.serviceUtils.length,
             options: CarouselOptions(
                 viewportFraction: 0.8,
-                aspectRatio: 16 / 15,
+                aspectRatio: 16 / 14,
                 autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 5),
+                enlargeCenterPage: true,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                enableInfiniteScroll: false,
                 onPageChanged: (index, reason) {
                   setState(() {
                     currentPos = index;

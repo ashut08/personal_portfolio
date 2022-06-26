@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:personal_portfolio/config/app_dimension.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/sizeconfig.dart';
@@ -26,9 +27,10 @@ class ServiceCard extends StatelessWidget {
       alignment: Alignment.topCenter,
       children: [
         Container(
-          padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.all(20),
-          //width: MediaQuery.of(context).size.width / 2,
+          padding: const EdgeInsets.all(10),
+          width: AppDimensions.normalize(100),
+          height: AppDimensions.normalize(180),
+          margin: const EdgeInsets.only(top: 20, bottom: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
@@ -38,7 +40,6 @@ class ServiceCard extends StatelessWidget {
           ),
           child: Column(
             children: [
-              size10,
               size10,
               size10,
               Text(
@@ -66,8 +67,6 @@ class ServiceCard extends StatelessWidget {
           ),
         ),
         Container(
-          margin: const EdgeInsets.all(0),
-          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: [
@@ -88,8 +87,8 @@ class ServiceCard extends StatelessWidget {
             image!,
             color: kSecondryColor,
             fit: BoxFit.fill,
-            height: 40,
-            width: 40,
+            height: 35,
+            width: 35,
           ),
         ),
       ],

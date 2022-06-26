@@ -26,7 +26,7 @@ class AboutMoile extends StatelessWidget {
         Center(
           child: Container(
             height: height! * 0.6,
-            width: width! / 2,
+            width: width! / 1.3,
             //   margin: const EdgeInsets.all(10),
             color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
             child: Container(

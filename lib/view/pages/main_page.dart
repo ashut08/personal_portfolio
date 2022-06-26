@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:personal_portfolio/animation/entrancefader.dart';
+import 'package:personal_portfolio/config/app.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/screen_helper.dart';
@@ -111,6 +112,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    App.init(context);
     return ScreenHelper(
         desktop: desktop(), mobile: _mobile(), tablet: _mobile());
   }

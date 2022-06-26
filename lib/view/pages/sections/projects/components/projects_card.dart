@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/config/app_dimension.dart';
+import 'package:personal_portfolio/config/space.dart';
+import 'package:personal_portfolio/config/ui.dart';
 import 'package:personal_portfolio/models/projects_model.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
+import 'package:personal_portfolio/utils/constant.dart';
+import 'package:personal_portfolio/utils/sizeconfig.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class ProjectsCard extends StatefulWidget {
   ProjectsCard({Key? key, required this.data}) : super(key: key);
@@ -18,6 +24,11 @@ class _ProjectsCardState extends State<ProjectsCard> {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+    SizeConfig().init(context);
+    AppDimensions.init();
+    UI.init(context);
+    var height = SizeConfig.screenHeight;
+    var width = SizeConfig.screenWidth;
     return InkWell(
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
@@ -37,14 +48,18 @@ class _ProjectsCardState extends State<ProjectsCard> {
         }
       },
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.7,
+        margin: Space.h,
+        width: AppDimensions.normalize(150),
+        padding: Space.all(),
+        height: AppDimensions.normalize(90),
         decoration: BoxDecoration(
+          border: Border.all(color: kPrimaryColor),
           borderRadius: BorderRadius.circular(10),
-          color: themeProvider.lightTheme ? Colors.black : Colors.white,
+          color: !themeProvider.lightTheme ? Colors.black : Colors.white,
           boxShadow: isHover
               ? [
                   const BoxShadow(
-                    color: Colors.white,
+                    color: kPrimaryColor,
                     blurRadius: 12.0,
                     offset: Offset(0.0, 0.0),
                   )
@@ -57,119 +72,56 @@ class _ProjectsCardState extends State<ProjectsCard> {
                   )
                 ],
         ),
-        padding: const EdgeInsets.all(5),
-        margin: const EdgeInsets.all(10),
         child: Stack(
+          fit: StackFit.loose,
           children: [
-            Column(
-              children: [
-                Text(widget.data!.description),
-              ],
-            ),
+            !kIsWeb
+                ? const SizedBox.shrink()
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      size10,
+                      Center(
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              image: AssetImage(
+                                widget.data!.projectIcon,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        child: Text(
+                          widget.data!.description,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: themeProvider.lightTheme
+                                ? Colors.black
+                                : Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: isHover ? 0.0 : 1.0,
               child: Image.asset(
                 widget.data!.projectImage,
+                fit: BoxFit.cover,
               ),
-            ),
+            )
           ],
         ),
       ),
     );
-    // SizeConfig().init(context);
-    // final themeProvider = Provider.of<ThemeProvider>(context);
-    // var height = SizeConfig.screenHeight;
-    // var width = SizeConfig.screenWidth;
-    // return InkWell(
-    //   onTap: () {}vs,
-    //   onHover: (value) {
-    //     if (value) {
-    //       setState(
-    //         () {
-    //           isHover = true;
-    //         },
-    //       );
-    //     } else {
-    //       setState(
-    //         () {
-    //           isHover = false;
-    //         },
-    //       );
-    //     }
-    //   },
-    //   child: Container(
-    //     // margin: Space.h,
-    //     // padding: Space.all(),
-    //     // width: AppDimensions.normalize(150),
-    //     // height: AppDimensions.normalize(90),
-    //     decoration: BoxDecoration(
-    //       //    color: themeProvider.lightTheme ? Colors.grey[900] : Colors.white,
-    //       borderRadius: BorderRadius.circular(10),
-    //       boxShadow: isHover
-    //           ? [
-    //               const BoxShadow(
-    //                 color: Colors.white,
-    //                 blurRadius: 12.0,
-    //                 offset: Offset(0.0, 0.0),
-    //               )
-    //             ]
-    //           : [
-    //               BoxShadow(
-    //                 color: Colors.black.withAlpha(100),
-    //                 blurRadius: 12.0,
-    //                 offset: const Offset(0.0, 0.0),
-    //               )
-    //             ],
-    //     ),
-    //     child: Stack(
-    //       fit: StackFit.expand,
-    //       children: [
-    //         Column(
-    //           mainAxisAlignment: MainAxisAlignment.center,
-    //           children: [
-    //             // Icon(
-
-    //             //   color: AppTheme.c!.primary!,
-    //             //   size: height * 0.1,
-    //             // )
-    //             // (width > 1135 || width < 950)
-    //             //     ? SizedBox(
-    //             //         height: height * 0.02,
-    //             //       )
-    //             //     : const SizedBox(),
-    //             // (width > 1135 || width < 950)
-    //             //     ? Text(
-    //             //         widget.projectTitle,
-    //             //         style: AppText.b2b,
-    //             //         textAlign: TextAlign.center,
-    //             //       )
-    //             //     : Container(),
-    //             // SizedBox(
-    //             //   height: height! * 0.01,
-    //             // ),
-    //             Text(
-    //               widget.data!.description,
-    //               textAlign: TextAlign.center,
-    //             ),
-    //             const SizedBox(
-    //                 //  height: height! * 0.01,
-    //                 ),
-    //           ],
-    //         ),
-    //         AnimatedOpacity(
-    //           duration: const Duration(milliseconds: 400),
-    //           opacity: isHover ? 0.0 : 1.0,
-    //           child: FittedBox(
-    //             fit: BoxFit.fill,
-    //             child: Image.asset(
-    //               widget.data!.projectImage,
-    //             ),
-    //           ),
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }

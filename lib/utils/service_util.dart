@@ -5,7 +5,7 @@ class ServiceUtils {
     ServiceModel(
       serviceName: "Web Development",
       serviceDescription:
-          "Build web app using flutter and react.js.\n Provide end to end service from building to deploying. \n CI/CD pipeline. \n AWS services.  ",
+          "Build web app using flutter and react.js.\n Provide end to end service from building to deploying.",
       serviceImage: "assets/sitemap-solid.svg",
     ),
     ServiceModel(

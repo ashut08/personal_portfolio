@@ -32,7 +32,7 @@ class AboutMeHeader extends StatelessWidget {
           child: Text(
             AboutUtils.aboutMeHeadline,
             style: TextStyle(
-              fontSize: height * 0.015,
+              fontSize: height * 0.018,
               color: kPrimaryColor,
               fontWeight: FontWeight.w900,
             ),

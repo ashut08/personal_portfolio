@@ -5,6 +5,7 @@ import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/project_utils.dart';
 import 'package:personal_portfolio/utils/sizeconfig.dart';
 import 'package:personal_portfolio/view/pages/sections/projects/components/projects_card.dart';
+import 'package:personal_portfolio/view/pages/sections/projects/components/see_more_button.dart';
 import 'package:provider/provider.dart';
 
 class ProjectDesktop extends StatelessWidget {
@@ -49,7 +50,11 @@ class ProjectDesktop extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(
+          height: height * 0.03,
+        ),
         Wrap(
+          spacing: 4,
           direction: Axis.horizontal,
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
@@ -63,6 +68,13 @@ class ProjectDesktop extends StatelessWidget {
                     ProjectsCard(data: e),
               )
               .toList(),
+        ),
+        SizedBox(
+          height: height * 0.03,
+        ),
+        const SeeMore(),
+        SizedBox(
+          height: height * 0.03,
         ),
       ],
     );
