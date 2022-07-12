@@ -1,6 +1,6 @@
 # personal_portfolio
 
-Personal Pertfolio made with flutter
+Personal Portfolio made with flutter
 
 
 
