@@ -23,8 +23,8 @@ class HomeMobile extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            bottom: -30,
-            right: -AppDimensions.normalize(25),
+            bottom: -AppDimensions.normalize(50),
+            right: -AppDimensions.normalize(40),
             child: Opacity(
               opacity: 0.9,
               child: EntranceFader(

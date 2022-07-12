@@ -1,11 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/config/app_dimension.dart';
+import 'package:personal_portfolio/config/space.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
 import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/project_utils.dart';
 import 'package:personal_portfolio/utils/sizeconfig.dart';
-import 'package:personal_portfolio/view/pages/sections/projects/components/projects_card.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ProjectsMobile extends StatefulWidget {
   const ProjectsMobile({Key? key}) : super(key: key);
@@ -58,22 +60,40 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
         size10,
         size10,
         CarouselSlider.builder(
-            itemCount: ProjectUtils().listOfProject.length,
-            options: CarouselOptions(
-                viewportFraction: 0.8,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 5),
-                enlargeCenterPage: true,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                enableInfiniteScroll: false,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentPos = index;
-                  });
-                }),
-            itemBuilder: (context, index, i) =>
-                ProjectsCard(data: ProjectUtils().listOfProject[index])),
+          itemCount: ProjectUtils().listOfProject.length,
+          options: CarouselOptions(
+              viewportFraction: 0.8,
+              autoPlay: true,
+              autoPlayInterval: const Duration(seconds: 5),
+              enlargeCenterPage: true,
+              autoPlayCurve: Curves.fastOutSlowIn,
+              autoPlayAnimationDuration: const Duration(milliseconds: 800),
+              enableInfiniteScroll: false,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  currentPos = index;
+                });
+              }),
+          itemBuilder: (context, index, i) => InkWell(
+            onTap: () =>
+                launchUrlString(ProjectUtils().listOfProject[index].link),
+            child: Container(
+              margin: Space.h,
+              width: AppDimensions.normalize(150),
+              padding: Space.all(),
+              height: AppDimensions.normalize(90),
+              decoration: BoxDecoration(
+                border: Border.all(color: kPrimaryColor),
+                borderRadius: BorderRadius.circular(10),
+                color: !themeProvider.lightTheme ? Colors.black : Colors.white,
+              ),
+              child: Image.asset(
+                ProjectUtils().listOfProject[index].projectImage,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: ProjectUtils().listOfProject.map((data) {

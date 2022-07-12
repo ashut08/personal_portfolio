@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/animation/flip_card.dart';
 import 'package:personal_portfolio/config/app_dimension.dart';
 import 'package:personal_portfolio/config/space.dart';
 import 'package:personal_portfolio/config/ui.dart';
@@ -8,7 +9,8 @@ import 'package:personal_portfolio/utils/constant.dart';
 import 'package:personal_portfolio/utils/sizeconfig.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
+
+import '../../../../../animation/flip_card_controller.dart';
 
 class ProjectsCard extends StatefulWidget {
   ProjectsCard({Key? key, required this.data}) : super(key: key);
@@ -20,6 +22,19 @@ class ProjectsCard extends StatefulWidget {
 
 class _ProjectsCardState extends State<ProjectsCard> {
   bool isHover = false;
+  FlipCardController? _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = FlipCardController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller!.controller!.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +52,22 @@ class _ProjectsCardState extends State<ProjectsCard> {
         launchUrlString(widget.data!.link);
       },
       onHover: (value) {
-        if (value) {
-          setState(() {
-            isHover = true;
-          });
-        } else {
-          setState(() {
-            isHover = false;
-          });
-        }
+        _controller!.toggleCard();
+        // if (value) {
+        //   setState(() {
+        //     isHover = true;
+        //     _controller!.toggleCard();
+        //     // _controller!.hint(
+        //     //   duration: const Duration(milliseconds: 500),
+        //     //   total: const Duration(milliseconds: 500),
+        //     // );
+        //   });
+        // } else {
+
+        //   setState(() {
+        //     isHover = false;
+        //   });
+        // }
       },
       child: Container(
         margin: Space.h,
@@ -72,54 +94,51 @@ class _ProjectsCardState extends State<ProjectsCard> {
                   )
                 ],
         ),
-        child: Stack(
-          fit: StackFit.loose,
-          children: [
-            !kIsWeb
-                ? const SizedBox.shrink()
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      size10,
-                      Center(
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage(
-                                widget.data!.projectIcon,
-                              ),
-                            ),
-                          ),
-                        ),
+        child: FlipCard(
+          controller: _controller,
+          flipOnTouch: false,
+          front: AnimatedOpacity(
+            duration: const Duration(milliseconds: 400),
+            opacity: isHover ? 0.0 : 1.0,
+            child: Image.asset(
+              widget.data!.projectImage,
+              fit: BoxFit.cover,
+            ),
+          ),
+          back: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              size10,
+              Center(
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(
+                        widget.data!.projectIcon,
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(5),
-                        child: Text(
-                          widget.data!.description,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: themeProvider.lightTheme
-                                ? Colors.black
-                                : Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-            AnimatedOpacity(
-              duration: const Duration(milliseconds: 400),
-              opacity: isHover ? 0.0 : 1.0,
-              child: Image.asset(
-                widget.data!.projectImage,
-                fit: BoxFit.cover,
+                ),
               ),
-            )
-          ],
+              Container(
+                color: !themeProvider.lightTheme ? Colors.black : Colors.white,
+                padding: const EdgeInsets.all(5),
+                child: Text(
+                  widget.data!.description,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color:
+                        themeProvider.lightTheme ? Colors.black : Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
