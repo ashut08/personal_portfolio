@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/utils/screen_helper.dart';
 import 'package:personal_portfolio/view/pages/sections/home/home_desktop.dart';
-import 'package:personal_portfolio/view/pages/sections/home/home_mobile.dart';
+import 'package:personal_portfolio/view/pages/sections/home/home_desktops.dart';
 import 'package:personal_portfolio/view/pages/sections/home/home_tab.dart';
 
 class HomePage extends StatefulWidget {

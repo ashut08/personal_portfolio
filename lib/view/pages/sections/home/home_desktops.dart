@@ -182,7 +182,7 @@ class HomeDesktop extends StatelessWidget {
                       SocialMediaIcon(
                         icon: kSocialIcons[i],
                         socialLink: kSocialLinks[i],
-                        height: height * 0.03,
+                        height: 60,
                         horizontalPadding: 2.0,
                       )
                   ],

@@ -14,6 +14,7 @@ import 'package:personal_portfolio/view/pages/sections/about/aboutme.dart';
 import 'package:personal_portfolio/view/pages/sections/contacts/contact.dart';
 import 'package:personal_portfolio/view/pages/sections/projects/projects.dart';
 import 'package:personal_portfolio/view/pages/sections/services/service.dart';
+import 'package:personal_portfolio/widgets/footer.dart';
 import 'package:personal_portfolio/widgets/logo.dart';
 import 'package:provider/provider.dart';
 
@@ -44,6 +45,15 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
+  final List<Widget> _sectionWidget = [
+    const HomePage(),
+    const AboutMe(),
+    const MyServices(),
+    const MyProject(),
+    const ContactMe(),
+    const Footer(),
+  ];
+
   Widget sectionWidget(int i) {
     if (i == 0) {
       return const HomePage();
@@ -56,9 +66,9 @@ class _MainPageState extends State<MainPage> {
     } else if (i == 4) {
       return const ContactMe();
     } else if (i == 5) {
-      return Container();
+      return const Footer();
     } else {
-      return Container();
+      return const Footer();
     }
   }
 
@@ -271,16 +281,24 @@ class _MainPageState extends State<MainPage> {
         ),
         const SizedBox(width: 15.0),
         SizedBox(
-          height: 30.0,
-          child: Switch(
-            inactiveTrackColor: Colors.grey,
-            value: !themeProv.lightTheme,
-            onChanged: (value) {
-              themeProv.lightTheme = !value;
-            },
-            activeColor: kPrimaryColor,
-          ),
-        ),
+            height: 30.0,
+            child: InkWell(
+              onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
+              child: Icon(
+                  themeProv.lightTheme
+                      ? Icons.light_mode_outlined
+                      : Icons.dark_mode_outlined,
+                  color: kPrimaryColor),
+            )
+
+            // Switch(
+            //   inactiveTrackColor: Colors.grey,
+            //   value: !themeProv.lightTheme,
+            //   onChanged: (value) {
+            //     themeProv.lightTheme = !value;
+            //   },
+
+            ),
         const SizedBox(width: 15.0),
       ],
     );

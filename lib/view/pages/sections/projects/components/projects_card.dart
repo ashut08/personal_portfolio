@@ -30,11 +30,11 @@ class _ProjectsCardState extends State<ProjectsCard> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    _controller!.controller!.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _controller!.controller!.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,12 @@ class _ProjectsCardState extends State<ProjectsCard> {
         launchUrlString(widget.data!.link);
       },
       onHover: (value) {
-        _controller!.toggleCard();
+        if (value) {
+          _controller!.toggleCard();
+        } else {
+          _controller!.toggleCard();
+        }
+
         // if (value) {
         //   setState(() {
         //     isHover = true;
@@ -96,6 +101,12 @@ class _ProjectsCardState extends State<ProjectsCard> {
         ),
         child: FlipCard(
           controller: _controller,
+          side: CardSide.FRONT,
+          onFlip: () {
+            setState(() {
+              // isHover = true;
+            });
+          },
           flipOnTouch: false,
           front: AnimatedOpacity(
             duration: const Duration(milliseconds: 400),
