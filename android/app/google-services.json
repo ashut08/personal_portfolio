@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "60045342574",
+    "project_id": "personal-portfolio-ab350",
+    "storage_bucket": "personal-portfolio-ab350.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60045342574:android:86eb69f6c37f996952f37f",
+        "android_client_info": {
+          "package_name": "com.lovecodingwithashu.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60045342574-0h94t7d40tidjulachcl11o9i2m1hfs9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN33dblADY5ytf0N_XW4ic0-Mb8wglPb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60045342574-0h94t7d40tidjulachcl11o9i2m1hfs9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -129,39 +129,41 @@ class _MainPageState extends State<MainPage> {
 
   _mobile() {
     final themeProv = Provider.of<ThemeProvider>(context);
-    return Scaffold(
-      floatingActionButton: _isScrollingDown
-          ? InkWell(
-              onTap: () => _scroll(0),
-              child: Transform.rotate(
-                angle: -340,
-                child: SvgPicture.asset(
-                  "assets/rocket-svgrepo-com.svg",
-                  height: 40,
-                  color: kSecondryColor,
+    return SafeArea(
+      child: Scaffold(
+        floatingActionButton: _isScrollingDown
+            ? InkWell(
+                onTap: () => _scroll(0),
+                child: Transform.rotate(
+                  angle: -340,
+                  child: SvgPicture.asset(
+                    "assets/rocket-svgrepo-com.svg",
+                    height: 40,
+                    color: kSecondryColor,
+                  ),
                 ),
-              ),
+              )
+            : Container(),
+        extendBodyBehindAppBar: true,
+        backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
+        appBar: AppBar(
+          iconTheme: IconThemeData(
+              color: themeProv.lightTheme ? Colors.black : Colors.white),
+          elevation: 0,
+          backgroundColor: !themeProv.lightTheme ? Colors.black : Colors.white,
+          actions: [
+            themeProv.lightTheme ? const LightLogo() : const Logo(),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.05,
             )
-          : Container(),
-      extendBodyBehindAppBar: true,
-      backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-            color: themeProv.lightTheme ? Colors.black : Colors.white),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        actions: [
-          themeProv.lightTheme ? const LightLogo() : const Logo(),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.05,
-          )
-        ],
-      ),
-      drawer: _appBarMobile(themeProv),
-      body: SectionsBody(
-        scrollController: _scrollController,
-        sectionsLength: _sectionsIcons.length,
-        sectionWidget: sectionWidget,
+          ],
+        ),
+        drawer: _appBarMobile(themeProv),
+        body: SectionsBody(
+          scrollController: _scrollController,
+          sectionsLength: _sectionsIcons.length,
+          sectionWidget: sectionWidget,
+        ),
       ),
     );
   }
@@ -284,11 +286,17 @@ class _MainPageState extends State<MainPage> {
             height: 30.0,
             child: InkWell(
               onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
-              child: Icon(
-                  themeProv.lightTheme
-                      ? Icons.light_mode_outlined
-                      : Icons.dark_mode_outlined,
-                  color: kPrimaryColor),
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: themeProv.lightTheme ? Colors.grey : Colors.white),
+                child: Icon(
+                    themeProv.lightTheme
+                        ? Icons.light_mode_outlined
+                        : Icons.dark_mode_outlined,
+                    color: kPrimaryColor),
+              ),
             )
 
             // Switch(

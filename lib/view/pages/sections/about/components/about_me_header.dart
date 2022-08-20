@@ -20,7 +20,7 @@ class AboutMeHeader extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w900,
-              fontSize: height * 0.035,
+              fontSize: height * 0.055,
               color: themProv.lightTheme
                   ? Colors.black.withOpacity(0.2)
                   : Colors.white.withOpacity(0.2),
@@ -32,7 +32,7 @@ class AboutMeHeader extends StatelessWidget {
           child: Text(
             AboutUtils.aboutMeHeadline,
             style: TextStyle(
-              fontSize: height * 0.018,
+              fontSize: height * 0.025,
               color: kPrimaryColor,
               fontWeight: FontWeight.w900,
             ),

@@ -23,7 +23,7 @@ class ContactDesktop extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: height * 0.04,
+                  fontSize: height * 0.075,
                   color: themProv.lightTheme
                       ? Colors.black.withOpacity(0.2)
                       : Colors.white.withOpacity(0.2),
@@ -35,7 +35,7 @@ class ContactDesktop extends StatelessWidget {
               child: Text(
                 "Send Message",
                 style: TextStyle(
-                  fontSize: height * 0.02,
+                  fontSize: height * 0.035,
                   color: kPrimaryColor,
                   fontWeight: FontWeight.w900,
                 ),
