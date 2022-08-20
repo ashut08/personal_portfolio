@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
@@ -31,9 +32,17 @@ class _ResumeDownloadButtonState extends State<ResumeDownloadButton> {
                   ? Colors.white
                   : Colors.black),
       child: InkWell(
-        onTap: () => launchUrl(
-          Uri.parse(AboutUtils.resumeurl),
-        ),
+        onTap: () async {
+          await FirebaseAnalytics.instance.logEvent(
+            name: 'Click Download Resume',
+            parameters: <String, dynamic>{
+              'download_resume': 'Download Resume',
+            },
+          );
+          launchUrl(
+            Uri.parse(AboutUtils.resumeurl),
+          );
+        },
         onHover: (value) {
           if (value) {
             setState(() {

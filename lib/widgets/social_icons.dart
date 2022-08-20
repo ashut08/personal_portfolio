@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:personal_portfolio/provider/theme_provider.dart';
@@ -40,7 +41,16 @@ class SocialMediaIcon extends StatelessWidget {
           ),
         ),
         iconSize: height,
-        onPressed: () => url.launchUrl(Uri.parse(socialLink!)),
+        onPressed: () async {
+          await FirebaseAnalytics.instance.logEvent(
+            name: 'Click Social media Profile',
+            parameters: <String, dynamic>{
+              'social_media_icon': icon,
+              'social_media_link': socialLink,
+            },
+          );
+          url.launchUrl(Uri.parse(socialLink!));
+        },
         hoverColor: Colors.transparent,
       ),
     );
