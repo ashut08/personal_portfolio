@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/view/pages/main_page.dart';
+import 'package:AshuTech/view/pages/main_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

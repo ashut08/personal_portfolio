@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 

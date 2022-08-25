@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/animation/flip_card.dart';
-import 'package:personal_portfolio/config/app_dimension.dart';
-import 'package:personal_portfolio/config/space.dart';
-import 'package:personal_portfolio/config/ui.dart';
-import 'package:personal_portfolio/models/projects_model.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/utils/sizeconfig.dart';
+import 'package:AshuTech/animation/flip_card.dart';
+import 'package:AshuTech/config/app_dimension.dart';
+import 'package:AshuTech/config/space.dart';
+import 'package:AshuTech/config/ui.dart';
+import 'package:AshuTech/models/projects_model.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/sizeconfig.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 

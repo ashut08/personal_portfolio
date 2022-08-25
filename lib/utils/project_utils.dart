@@ -1,4 +1,4 @@
-import 'package:personal_portfolio/models/projects_model.dart';
+import 'package:AshuTech/models/projects_model.dart';
 
 class ProjectUtils {
   List<ProjectModel> listOfProject = [

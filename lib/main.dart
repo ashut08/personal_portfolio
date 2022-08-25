@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_portfolio/firebase_options.dart';
-import 'package:personal_portfolio/provider/blogs_provider.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/view/pages/splash_screen.dart';
+import 'package:AshuTech/firebase_options.dart';
+import 'package:AshuTech/provider/blogs_provider.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/view/pages/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {

@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:AshuTech/animation/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/animation/flip_card.dart';
 
 class FlipCardController {
   /// The internal widget state.

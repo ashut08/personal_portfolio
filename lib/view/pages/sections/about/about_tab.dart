@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/about_utils.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/utils/sizeconfig.dart';
-import 'package:personal_portfolio/view/pages/sections/about/components/about_info_data.dart';
-import 'package:personal_portfolio/view/pages/sections/about/components/about_me_header.dart';
-import 'package:personal_portfolio/view/pages/sections/about/components/resume_download_button.dart';
-import 'package:personal_portfolio/view/pages/sections/about/components/tech_widget.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/about_utils.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/sizeconfig.dart';
+import 'package:AshuTech/view/pages/sections/about/components/about_info_data.dart';
+import 'package:AshuTech/view/pages/sections/about/components/about_me_header.dart';
+import 'package:AshuTech/view/pages/sections/about/components/resume_download_button.dart';
+import 'package:AshuTech/view/pages/sections/about/components/tech_widget.dart';
 import 'package:provider/provider.dart';
 
 class AboutTab extends StatelessWidget {

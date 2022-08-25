@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_portfolio/models/medium_blog_model.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/utils/sizeconfig.dart';
+import 'package:AshuTech/models/medium_blog_model.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/sizeconfig.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/animation/entrancefader.dart';
-import 'package:personal_portfolio/provider/blogs_provider.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/utils/screen_helper.dart';
-import 'package:personal_portfolio/view/pages/sections/blogs/components/blog_card.dart';
-import 'package:personal_portfolio/widgets/logo.dart';
+import 'package:AshuTech/animation/entrancefader.dart';
+import 'package:AshuTech/provider/blogs_provider.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/screen_helper.dart';
+import 'package:AshuTech/view/pages/sections/blogs/components/blog_card.dart';
+import 'package:AshuTech/widgets/logo.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 

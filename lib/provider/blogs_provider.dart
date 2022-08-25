@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:personal_portfolio/controller/blogApi.dart';
-import 'package:personal_portfolio/models/medium_blog_model.dart';
+import 'package:AshuTech/controller/blogApi.dart';
+import 'package:AshuTech/models/medium_blog_model.dart';
 
 class BlogProvider with ChangeNotifier {
   List<Items>? _blogList = [];

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-import 'package:personal_portfolio/utils/screen_helper.dart';
-import 'package:personal_portfolio/view/pages/sections/projects/projects_desktop.dart';
-import 'package:personal_portfolio/view/pages/sections/projects/projects_mobile.dart';
+import 'package:AshuTech/utils/screen_helper.dart';
+import 'package:AshuTech/view/pages/sections/projects/projects_desktop.dart';
+import 'package:AshuTech/view/pages/sections/projects/projects_mobile.dart';
 
 class MyProject extends StatefulWidget {
   const MyProject({Key? key}) : super(key: key);

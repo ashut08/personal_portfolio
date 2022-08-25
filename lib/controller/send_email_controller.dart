@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer' as dev;
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'package:personal_portfolio/utils/emailjs_constant.dart';
+import 'package:AshuTech/utils/emailjs_constant.dart';
 
 class SenEmail {
   String url = "";

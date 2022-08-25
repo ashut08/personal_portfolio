@@ -2,7 +2,7 @@ library flip_card;
 
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/animation/flip_card_controller.dart';
+import 'package:AshuTech/animation/flip_card_controller.dart';
 
 enum FlipDirection {
   VERTICAL,

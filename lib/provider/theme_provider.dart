@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:personal_portfolio/utils/preference_helper.dart';
+import 'package:AshuTech/utils/preference_helper.dart';
 
 class ThemeProvider extends ChangeNotifier {
   PreferenceHelper darkThemePref = PreferenceHelper();

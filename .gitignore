@@ -1,6 +1,7 @@
 # Miscellaneous
 *.class
 *.log
+*.jks
 *.pyc
 *.swp
 .DS_Store
@@ -48,3 +49,8 @@ app.*.map.json
 
 #emailJsConstant
 /lib/utils/emailjs_constant.dart
+#jks file
+/android/app/ashutech.jks
+
+#firebase configure file
+/lib/firebase_options.dart

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/utils/constant.dart';
+import 'package:AshuTech/utils/constant.dart';
 
 class ThemeStyles {
   static ThemeData themeData(bool lightTheme, BuildContext buildContext) {

@@ -1,10 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_portfolio/animation/entrancefader.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/widgets/social_icons.dart';
+import 'package:AshuTech/animation/entrancefader.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/widgets/social_icons.dart';
 import 'package:provider/provider.dart';
 
 class HomeDesktop extends StatelessWidget {

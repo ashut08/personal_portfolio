@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:personal_portfolio/utils/screen_helper.dart';
-import 'package:personal_portfolio/view/pages/sections/about/about_desktop.dart';
-import 'package:personal_portfolio/view/pages/sections/about/about_mobile.dart';
-import 'package:personal_portfolio/view/pages/sections/about/about_tab.dart';
+import 'package:AshuTech/utils/screen_helper.dart';
+import 'package:AshuTech/view/pages/sections/about/about_desktop.dart';
+import 'package:AshuTech/view/pages/sections/about/about_mobile.dart';
+import 'package:AshuTech/view/pages/sections/about/about_tab.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({Key? key}) : super(key: key);

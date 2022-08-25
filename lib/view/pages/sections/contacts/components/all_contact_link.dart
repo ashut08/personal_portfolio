@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/about_utils.dart';
-import 'package:personal_portfolio/utils/constant.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/about_utils.dart';
+import 'package:AshuTech/utils/constant.dart';
 import 'package:provider/provider.dart';
 
 class AllContactLink extends StatelessWidget {

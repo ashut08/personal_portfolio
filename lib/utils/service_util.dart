@@ -1,4 +1,4 @@
-import 'package:personal_portfolio/models/service_model.dart';
+import 'package:AshuTech/models/service_model.dart';
 
 class ServiceUtils {
   static List<ServiceModel> serviceUtils = [

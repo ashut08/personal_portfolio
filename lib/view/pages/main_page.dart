@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:personal_portfolio/animation/entrancefader.dart';
-import 'package:personal_portfolio/config/app.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/utils/screen_helper.dart';
-import 'package:personal_portfolio/view/pages/sections/blogs/blogs_page.dart';
-import 'package:personal_portfolio/view/pages/sections/home/home_page.dart';
-import 'package:personal_portfolio/view/pages/main_section.dart';
-import 'package:personal_portfolio/view/pages/sections/about/aboutme.dart';
-import 'package:personal_portfolio/view/pages/sections/contacts/contact.dart';
-import 'package:personal_portfolio/view/pages/sections/projects/projects.dart';
-import 'package:personal_portfolio/view/pages/sections/services/service.dart';
-import 'package:personal_portfolio/widgets/footer.dart';
-import 'package:personal_portfolio/widgets/logo.dart';
+import 'package:AshuTech/animation/entrancefader.dart';
+import 'package:AshuTech/config/app.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/screen_helper.dart';
+import 'package:AshuTech/view/pages/sections/blogs/blogs_page.dart';
+import 'package:AshuTech/view/pages/sections/home/home_page.dart';
+import 'package:AshuTech/view/pages/main_section.dart';
+import 'package:AshuTech/view/pages/sections/about/aboutme.dart';
+import 'package:AshuTech/view/pages/sections/contacts/contact.dart';
+import 'package:AshuTech/view/pages/sections/projects/projects.dart';
+import 'package:AshuTech/view/pages/sections/services/service.dart';
+import 'package:AshuTech/widgets/footer.dart';
+import 'package:AshuTech/widgets/logo.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {

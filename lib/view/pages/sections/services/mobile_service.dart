@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/models/service_model.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/utils/service_util.dart';
-import 'package:personal_portfolio/utils/sizeconfig.dart';
-import 'package:personal_portfolio/view/pages/sections/services/components/service_card.dart';
+import 'package:AshuTech/models/service_model.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/service_util.dart';
+import 'package:AshuTech/utils/sizeconfig.dart';
+import 'package:AshuTech/view/pages/sections/services/components/service_card.dart';
 import 'package:provider/provider.dart';
 
 class ServiceMobile extends StatefulWidget {

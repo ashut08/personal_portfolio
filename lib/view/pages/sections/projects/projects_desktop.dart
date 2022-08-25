@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/config/app_dimension.dart';
-import 'package:personal_portfolio/provider/theme_provider.dart';
-import 'package:personal_portfolio/utils/constant.dart';
-import 'package:personal_portfolio/utils/project_utils.dart';
-import 'package:personal_portfolio/utils/sizeconfig.dart';
-import 'package:personal_portfolio/view/pages/sections/projects/components/projects_card.dart';
-import 'package:personal_portfolio/view/pages/sections/projects/components/see_more_button.dart';
+import 'package:AshuTech/config/app_dimension.dart';
+import 'package:AshuTech/provider/theme_provider.dart';
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/project_utils.dart';
+import 'package:AshuTech/utils/sizeconfig.dart';
+import 'package:AshuTech/view/pages/sections/projects/components/projects_card.dart';
+import 'package:AshuTech/view/pages/sections/projects/components/see_more_button.dart';
 import 'package:provider/provider.dart';
 
 class ProjectDesktop extends StatelessWidget {

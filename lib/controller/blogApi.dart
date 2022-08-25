@@ -2,8 +2,8 @@
 import 'dart:convert';
 import 'dart:developer' as dev;
 import 'package:http/http.dart' as http;
-import 'package:personal_portfolio/models/medium_blog_model.dart';
-import 'package:personal_portfolio/utils/constant.dart';
+import 'package:AshuTech/models/medium_blog_model.dart';
+import 'package:AshuTech/utils/constant.dart';
 
 class BlogApi {
   static Future<List<Items>> getBlogList() async {

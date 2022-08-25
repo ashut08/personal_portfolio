@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
-import 'package:personal_portfolio/utils/screen_helper.dart';
-import 'package:personal_portfolio/view/pages/sections/services/service_desktop.dart';
-import 'package:personal_portfolio/view/pages/sections/services/mobile_service.dart';
-import 'package:personal_portfolio/view/pages/sections/services/services_tab.dart';
+import 'package:AshuTech/utils/screen_helper.dart';
+import 'package:AshuTech/view/pages/sections/services/service_desktop.dart';
+import 'package:AshuTech/view/pages/sections/services/mobile_service.dart';
+import 'package:AshuTech/view/pages/sections/services/services_tab.dart';
 
 class MyServices extends StatefulWidget {
   const MyServices({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/config/app_dimension.dart';
-import 'package:personal_portfolio/config/space.dart';
-import 'package:personal_portfolio/config/ui.dart';
+import 'package:AshuTech/config/app_dimension.dart';
+import 'package:AshuTech/config/space.dart';
+import 'package:AshuTech/config/ui.dart';
 
 class App {
   static bool? isLtr;
