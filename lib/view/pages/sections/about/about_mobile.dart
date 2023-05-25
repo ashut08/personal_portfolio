@@ -13,7 +13,7 @@ class AboutMoile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(AboutUtils().ageCalculate(AboutUtils.dob).toString());
+    //(AboutUtils().ageCalculate(AboutUtils.dob).toString());
 
     SizeConfig().init(context);
     var height = SizeConfig.screenHeight;

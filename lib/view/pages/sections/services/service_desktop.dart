@@ -13,7 +13,7 @@ class ServiceDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = SizeConfig.screenHeight;
-    var width = SizeConfig.screenWidth;
+    // var width = SizeConfig.screenWidth;
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Column(
       children: [

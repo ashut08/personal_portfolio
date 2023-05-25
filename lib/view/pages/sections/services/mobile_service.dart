@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:AshuTech/models/service_model.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
 import 'package:AshuTech/utils/constant.dart';
 import 'package:AshuTech/utils/service_util.dart';
@@ -108,20 +107,20 @@ class _ServiceMobileState extends State<ServiceMobile> {
     );
   }
 
-  Widget _buildServiceCard(List<ServiceModel> serviceModel) {
-    return LayoutBuilder(
-      builder: (context, constraints) => ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: serviceModel.length,
-        itemBuilder: (context, i) {
-          return ServiceCard(
-            image: serviceModel[i].serviceImage,
-            serviceName: serviceModel[i].serviceName,
-            serviceDescription: serviceModel[i].serviceDescription,
-          );
-        },
-      ),
-    );
-  }
+  // Widget _buildServiceCard(List<ServiceModel> serviceModel) {
+  //   return LayoutBuilder(
+  //     builder: (context, constraints) => ListView.builder(
+  //       physics: const NeverScrollableScrollPhysics(),
+  //       shrinkWrap: true,
+  //       itemCount: serviceModel.length,
+  //       itemBuilder: (context, i) {
+  //         return ServiceCard(
+  //           image: serviceModel[i].serviceImage,
+  //           serviceName: serviceModel[i].serviceName,
+  //           serviceDescription: serviceModel[i].serviceDescription,
+  //         );
+  //       },
+  //     ),
+  //   );
+  // }
 }

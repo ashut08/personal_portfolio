@@ -51,9 +51,9 @@ class ContactDesktop extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border.all(color: kPrimaryColor),
               borderRadius: BorderRadius.circular(6)),
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               Expanded(
                 child: AllContactLink(),
               ),

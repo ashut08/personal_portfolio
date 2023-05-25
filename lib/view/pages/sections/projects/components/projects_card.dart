@@ -12,6 +12,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../../../../animation/flip_card_controller.dart';
 
+// ignore: must_be_immutable
 class ProjectsCard extends StatefulWidget {
   ProjectsCard({Key? key, required this.data}) : super(key: key);
   ProjectModel? data;
@@ -42,8 +43,7 @@ class _ProjectsCardState extends State<ProjectsCard> {
     SizeConfig().init(context);
     AppDimensions.init();
     UI.init(context);
-    var height = SizeConfig.screenHeight;
-    var width = SizeConfig.screenWidth;
+
     return InkWell(
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,

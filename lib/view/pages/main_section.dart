@@ -1,3 +1,6 @@
+import 'package:AshuTech/utils/constant.dart';
+import 'package:AshuTech/utils/sizeconfig.dart';
+import 'package:AshuTech/widgets/social_icons.dart';
 import 'package:flutter/material.dart';
 
 class SectionsBody extends StatelessWidget {
@@ -13,17 +16,38 @@ class SectionsBody extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: ListView.builder(
-        // padding: const EdgeInsets.all(20),
-        // physics: !kIsWeb ? ScrollPhysics() : NeverScrollableScrollPhysics(),
-        controller: scrollController,
-        shrinkWrap: true,
-        itemCount: sectionsLength,
-        itemBuilder: (context, index) => sectionWidget(index),
-      ),
+    SizeConfig().init(context);
+    var height = SizeConfig.screenHeight!;
+    return Stack(
+      children: [
+        SizedBox(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: ListView.builder(
+            // padding: const EdgeInsets.all(20),
+            // physics: !kIsWeb ? ScrollPhysics() : NeverScrollableScrollPhysics(),
+            controller: scrollController,
+            shrinkWrap: true,
+            itemCount: sectionsLength,
+            itemBuilder: (context, index) => sectionWidget(index),
+          ),
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (int i = 0; i < kSocialIcons.length; i++)
+                SocialMediaIcon(
+                  icon: kSocialIcons[i],
+                  socialLink: kSocialLinks[i],
+                  height: height * 0.03,
+                  horizontalPadding: 2.0,
+                )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

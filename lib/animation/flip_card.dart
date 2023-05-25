@@ -17,7 +17,7 @@ enum CardSide {
 enum Fill { none, fillFront, fillBack }
 
 class AnimationCard extends StatelessWidget {
-  const AnimationCard({this.child, this.animation, this.direction});
+  const AnimationCard({super.key, this.child, this.animation, this.direction});
 
   final Widget? child;
   final Animation<double>? animation;

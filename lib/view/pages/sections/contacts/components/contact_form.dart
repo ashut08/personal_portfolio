@@ -209,6 +209,7 @@ class _ContactFormState extends State<ContactForm> {
               _name.clear();
               _email.clear();
               _message.clear(); // ignore: use_build_context_synchronously
+              // ignore: use_build_context_synchronously
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   backgroundColor: Colors.green,
                   content: Text("Message Sent")));

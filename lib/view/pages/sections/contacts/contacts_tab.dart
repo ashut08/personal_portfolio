@@ -51,8 +51,8 @@ class ContactTab extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border.all(color: kPrimaryColor),
               borderRadius: BorderRadius.circular(6)),
-          child: Row(
-            children: const [
+          child: const Row(
+            children: [
               Expanded(
                 flex: 1,
                 child: AllContactLink(),

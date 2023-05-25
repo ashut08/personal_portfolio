@@ -7,6 +7,7 @@ import 'package:AshuTech/utils/sizeconfig.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+// ignore: must_be_immutable
 class BLogCard extends StatefulWidget {
   BLogCard({Key? key, this.item}) : super(key: key);
   Items? item;
@@ -23,17 +24,15 @@ class _BLogCardState extends State<BLogCard> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     final themeProvider = Provider.of<ThemeProvider>(context);
-    var height = SizeConfig.screenHeight;
+
     var width = SizeConfig.screenWidth;
     return InkWell(
         hoverColor: Colors.transparent,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        onTap: widget.item!.link == null
-            ? () {}
-            : () => launchUrlString(
-                  widget.item!.link,
-                ),
+        onTap: () => launchUrlString(
+              widget.item!.link,
+            ),
         onHover: (value) {
           if (value) {
             setState(() {

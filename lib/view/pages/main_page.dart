@@ -45,15 +45,6 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  final List<Widget> _sectionWidget = [
-    const HomePage(),
-    const AboutMe(),
-    const MyServices(),
-    const MyProject(),
-    const ContactMe(),
-    const Footer(),
-  ];
-
   Widget sectionWidget(int i) {
     if (i == 0) {
       return const HomePage();

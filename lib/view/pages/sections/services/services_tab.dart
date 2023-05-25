@@ -14,7 +14,7 @@ class ServiceTab extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     var height = SizeConfig.screenHeight;
-    var width = SizeConfig.screenWidth;
+    // var width = SizeConfig.screenWidth;
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Column(
       children: [

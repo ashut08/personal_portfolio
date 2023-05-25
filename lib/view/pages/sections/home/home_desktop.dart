@@ -103,88 +103,93 @@ class HomeMobile extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                EntranceFader(
-                  offset: const Offset(-10, 0),
-                  delay: const Duration(seconds: 1),
-                  duration: const Duration(milliseconds: 800),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        Icons.play_arrow_rounded,
-                        color: kPrimaryColor,
-                      ),
-                      AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            'Mobile Apps Developer',
-                            textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.030,
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.1),
-                            cursor: '|',
-                            speed: const Duration(milliseconds: 100),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: EntranceFader(
+                    offset: const Offset(-10, 0),
+                    delay: const Duration(seconds: 1),
+                    duration: const Duration(milliseconds: 800),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const Icon(
+                          Icons.play_arrow_rounded,
+                          color: kPrimaryColor,
+                        ),
+                        Flexible(
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                'Mobile Apps Developer',
+                                textStyle: GoogleFonts.montserrat(
+                                    fontSize: height * 0.030,
+                                    color: kPrimaryColor,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.1),
+                                cursor: '|',
+                                speed: const Duration(milliseconds: 100),
+                              ),
+                              TypewriterAnimatedText(
+                                'Flutter Developer',
+                                textStyle: GoogleFonts.montserrat(
+                                    fontSize: height * 0.03,
+                                    color: kPrimaryColor,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.1),
+                                cursor: ' | ',
+                                speed: const Duration(milliseconds: 100),
+                              ),
+                              TypewriterAnimatedText(
+                                'Technical Writer',
+                                textStyle: GoogleFonts.montserrat(
+                                    fontSize: height * 0.030,
+                                    color: kPrimaryColor,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.1),
+                                cursor: '|',
+                                speed: const Duration(milliseconds: 100),
+                              ),
+                              TypewriterAnimatedText(
+                                'Web Developer',
+                                textStyle: GoogleFonts.montserrat(
+                                    fontSize: height * 0.030,
+                                    color: kPrimaryColor,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.1),
+                                cursor: '|',
+                                speed: const Duration(milliseconds: 100),
+                              ),
+                              TypewriterAnimatedText(
+                                'DevOps enthusiastic',
+                                textStyle: GoogleFonts.montserrat(
+                                    fontSize: height * 0.03,
+                                    color: kPrimaryColor,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.1),
+                                cursor: '|',
+                                speed: const Duration(milliseconds: 100),
+                              ),
+                              TypewriterAnimatedText(
+                                'UI/UX enthusiastic',
+                                textStyle: GoogleFonts.montserrat(
+                                    fontSize: height * 0.03,
+                                    color: kPrimaryColor,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.1),
+                                cursor: '|',
+                                speed: const Duration(milliseconds: 100),
+                              ),
+                            ],
+                            totalRepeatCount: 100,
+                            isRepeatingAnimation: true,
+                            repeatForever: true,
+                            pause: const Duration(milliseconds: 1000),
+                            displayFullTextOnTap: true,
                           ),
-                          TypewriterAnimatedText(
-                            'Flutter Developer',
-                            textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.03,
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.1),
-                            cursor: ' | ',
-                            speed: const Duration(milliseconds: 100),
-                          ),
-                          TypewriterAnimatedText(
-                            'Technical Writer',
-                            textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.030,
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.1),
-                            cursor: '|',
-                            speed: const Duration(milliseconds: 100),
-                          ),
-                          TypewriterAnimatedText(
-                            'Web Developer',
-                            textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.035,
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.1),
-                            cursor: '|',
-                            speed: const Duration(milliseconds: 100),
-                          ),
-                          TypewriterAnimatedText(
-                            'DevOps enthusiastic',
-                            textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.035,
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.1),
-                            cursor: '|',
-                            speed: const Duration(milliseconds: 100),
-                          ),
-                          TypewriterAnimatedText(
-                            'UI/UX enthusiastic',
-                            textStyle: GoogleFonts.montserrat(
-                                fontSize: height * 0.035,
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.1),
-                            cursor: '|',
-                            speed: const Duration(milliseconds: 100),
-                          ),
-                        ],
-                        totalRepeatCount: 100,
-                        isRepeatingAnimation: true,
-                        repeatForever: true,
-                        pause: const Duration(milliseconds: 1000),
-                        displayFullTextOnTap: true,
-                      ),
-                    ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(

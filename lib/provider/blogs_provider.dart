@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:AshuTech/controller/blogApi.dart';
+import 'package:AshuTech/controller/blog_api.dart';
 import 'package:AshuTech/models/medium_blog_model.dart';
 
 class BlogProvider with ChangeNotifier {
