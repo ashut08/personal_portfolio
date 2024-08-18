@@ -7,8 +7,12 @@ import 'package:AshuTech/utils/sizeconfig.dart';
 import 'package:AshuTech/view/pages/sections/services/components/service_card.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../utils/colors.dart';
+import '../../../../widgets/divider.dart';
+import '../../../../widgets/gradient_text.dart';
+
 class ServiceMobile extends StatefulWidget {
-  const ServiceMobile({Key? key}) : super(key: key);
+  const ServiceMobile({super.key});
 
   @override
   State<ServiceMobile> createState() => _ServiceMobileState();
@@ -29,25 +33,35 @@ class _ServiceMobileState extends State<ServiceMobile> {
         Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            Center(
-              child: Text(
-                "Services".toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: height! * 0.055,
-                  color: themeProvider.lightTheme
-                      ? Colors.black.withOpacity(0.2)
-                      : Colors.white.withOpacity(0.2),
+            Row(
+              children: [
+                const CustomDivider(
+                  height: 4,
+                  width: 33,
                 ),
-              ),
+                const SizedBox(
+                  width: 10,
+                ),
+                GradientText(
+                  "Services",
+                  gradient: primaryGradientColor,
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const CustomDivider(
+                  height: 4,
+                  width: 33,
+                ),
+              ],
             ),
             Positioned(
               bottom: 8,
               child: Text(
                 "What I Offer",
                 style: TextStyle(
-                  fontSize: height * 0.032,
+                  fontSize: height! * 0.032,
                   color: kPrimaryColor,
                   fontWeight: FontWeight.w900,
                 ),

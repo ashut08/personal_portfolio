@@ -1,3 +1,4 @@
+import 'package:AshuTech/utils/theme_style.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +15,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -22,19 +23,21 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
-        ChangeNotifierProvider(create: (context) => BlogProvider())
+        ChangeNotifierProvider(create: (context) => BlogProvider()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'AshuTech',
-        theme: ThemeData(
-          textTheme: GoogleFonts.montserratTextTheme(
-            Theme.of(context).textTheme,
-          ),
-          primarySwatch: Colors.blue,
-        ),
-        home: const SplashScreen(),
-      ),
+      child: Builder(builder: (context) {
+        final themeProvider = Provider.of<ThemeProvider>(context);
+        return MaterialApp(
+          // You can toggle between light and dark themes here
+          darkTheme: ThemeData.dark(),
+          themeMode:
+              themeProvider.lightTheme ? ThemeMode.light : ThemeMode.dark,
+          debugShowCheckedModeBanner: false,
+          title: 'AshuTech',
+          theme: ThemeStyles.themeData(themeProvider.lightTheme, context),
+          home: const SplashScreen(),
+        );
+      }),
     );
   }
 }

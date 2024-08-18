@@ -10,7 +10,7 @@ import 'package:AshuTech/widgets/social_icons.dart';
 import 'package:provider/provider.dart';
 
 class HomeTab extends StatelessWidget {
-  const HomeTab({Key? key}) : super(key: key);
+  const HomeTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +51,9 @@ class HomeTab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Hello",
+                  "Welcome to my portfolio",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.openSans(
                       fontSize: height * 0.055,
                       color: themeProvider.lightTheme
                           ? Colors.black
@@ -69,7 +69,7 @@ class HomeTab extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: 'I am  ',
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.openSans(
                               fontSize: height * 0.055,
                               color: themeProvider.lightTheme
                                   ? Colors.black
@@ -79,7 +79,7 @@ class HomeTab extends StatelessWidget {
                         ),
                         TextSpan(
                           text: ' Ashutosh',
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.openSans(
                               fontSize: height * 0.055,
                               color: kPrimaryColor,
                               fontWeight: FontWeight.w900,
@@ -87,7 +87,7 @@ class HomeTab extends StatelessWidget {
                         ),
                         TextSpan(
                           text: ' Singh',
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.openSans(
                               fontSize: height * 0.055,
                               color: themeProvider.lightTheme
                                   ? Colors.black
@@ -119,7 +119,7 @@ class HomeTab extends StatelessWidget {
                         animatedTexts: [
                           TypewriterAnimatedText(
                             ' Mobile App Developer',
-                            textStyle: GoogleFonts.montserrat(
+                            textStyle: GoogleFonts.openSans(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
@@ -129,7 +129,7 @@ class HomeTab extends StatelessWidget {
                           ),
                           TypewriterAnimatedText(
                             'Flutter Developer',
-                            textStyle: GoogleFonts.montserrat(
+                            textStyle: GoogleFonts.openSans(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
@@ -139,7 +139,7 @@ class HomeTab extends StatelessWidget {
                           ),
                           TypewriterAnimatedText(
                             'Technical Writer',
-                            textStyle: GoogleFonts.montserrat(
+                            textStyle: GoogleFonts.openSans(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
@@ -149,7 +149,7 @@ class HomeTab extends StatelessWidget {
                           ),
                           TypewriterAnimatedText(
                             'DevOps enthusiastic',
-                            textStyle: GoogleFonts.montserrat(
+                            textStyle: GoogleFonts.openSans(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
@@ -159,7 +159,7 @@ class HomeTab extends StatelessWidget {
                           ),
                           TypewriterAnimatedText(
                             'UI/UX enthusiastic',
-                            textStyle: GoogleFonts.montserrat(
+                            textStyle: GoogleFonts.openSans(
                                 fontSize: height * 0.035,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w900,
@@ -187,10 +187,10 @@ class HomeTab extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    for (int i = 0; i < kSocialIcons.length; i++)
+                    for (int i = 0; i < ksocialData.length; i++)
                       SocialMediaIcon(
-                        icon: kSocialIcons[i],
-                        socialLink: kSocialLinks[i],
+                        icon: ksocialData[i].icon,
+                        socialLink: ksocialData[i].link,
                         height: height * 0.03,
                         horizontalPadding: 2.0,
                       )

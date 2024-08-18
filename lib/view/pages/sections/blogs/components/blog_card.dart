@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 // ignore: must_be_immutable
 class BLogCard extends StatefulWidget {
-  BLogCard({Key? key, this.item}) : super(key: key);
+  BLogCard({super.key, this.item});
   Items? item;
   @override
   State<BLogCard> createState() => _BLogCardState();
@@ -167,7 +167,7 @@ class _BLogCardState extends State<BLogCard> {
                     Text(
                       widget.item!.title,
                       //  overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.openSans(
                           fontSize: 16,
                           color: themeProvider.lightTheme
                               ? Colors.black

@@ -5,38 +5,38 @@ class ServiceUtils {
     ServiceModel(
       serviceName: "Web Development",
       serviceDescription:
-          "Build web app using flutter and react.js.\n Provide end to end service from building to deploying.",
-      serviceImage: "assets/sitemap-solid.svg",
+          "Develop and deploy robust web applications using Flutter and React.js. Offering comprehensive solutions from inception to deployment.",
+      serviceImage: "assets/newicon/webdevelopment.svg",
     ),
     ServiceModel(
       serviceName: "Mobile Development",
       serviceDescription:
-          "Build mobile apps using flutter. \n Provide end-to-end development services for mobile apps for Android as well as iOS platforms.",
-      serviceImage: "assets/mobile-alt-solid.svg",
+          "Deliver high-quality mobile applications using Flutter. Providing complete development services for both Android and iOS platforms.",
+      serviceImage: "assets/newicon/mobiledevelopment.svg",
     ),
     ServiceModel(
       serviceName: "Rapid Development",
       serviceDescription:
-          "Provide Working  MVP of the products.\n Quick and working prototype ",
-      serviceImage: "assets/rapid_development.svg",
+          "Expedite your project with a fully functional MVP. Offering swift and efficient prototype development services.",
+      serviceImage: "assets/newicon/development.svg",
     ),
     ServiceModel(
       serviceName: "UI/UX Design",
       serviceDescription:
-          "Full range of web and mobile app design services.\n from prototyping and graphic design to pixel-perfect UI.",
-      serviceImage: "assets/palette-solid.svg",
+          "Offer a full spectrum of web and mobile app design services, from prototyping and graphic design to delivering pixel-perfect UI.",
+      serviceImage: "assets/newicon/uidesign.svg",
     ),
     ServiceModel(
       serviceName: "Open Source",
       serviceDescription:
-          "Well documentation.\n Well written README.md files.\n ",
-      serviceImage: "assets/code-solid.svg",
+          "Provide meticulously documented code with well-structured README.md files, ensuring clarity and ease of use.",
+      serviceImage: "assets/newicon/github.svg",
     ),
     ServiceModel(
-      serviceName: "Technical Blogger",
+      serviceName: "Technical Blogging",
       serviceDescription:
-          "SEO friendly blog. \n Write technical blogs on Medium\n Grammatical error-free blogs.",
-      serviceImage: "assets/pencil-solid.svg",
+          "Create SEO-optimized, engaging technical blogs for platforms like Medium, with a focus on clarity and grammatical accuracy.",
+      serviceImage: "assets/newicon/writing.svg",
     ),
   ];
 }

@@ -1,3 +1,4 @@
+import 'package:AshuTech/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,7 +20,7 @@ import 'package:AshuTech/widgets/logo.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -119,6 +120,8 @@ class _MainPageState extends State<MainPage> {
   }
 
   _mobile() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     final themeProv = Provider.of<ThemeProvider>(context);
     return SafeArea(
       child: Scaffold(
@@ -136,7 +139,6 @@ class _MainPageState extends State<MainPage> {
               )
             : Container(),
         extendBodyBehindAppBar: true,
-        backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
         appBar: AppBar(
           iconTheme: IconThemeData(
               color: themeProv.lightTheme ? Colors.black : Colors.white),
@@ -150,10 +152,14 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
         drawer: _appBarMobile(themeProv),
-        body: SectionsBody(
-          scrollController: _scrollController,
-          sectionsLength: _sectionsIcons.length,
-          sectionWidget: sectionWidget,
+        body: Padding(
+          padding:
+              EdgeInsets.fromLTRB(width * 0.1, height * 0.1, width * 0.1, 0),
+          child: SectionsBody(
+            scrollController: _scrollController,
+            sectionsLength: _sectionsIcons.length,
+            sectionWidget: sectionWidget,
+          ),
         ),
       ),
     );
@@ -195,16 +201,27 @@ class _MainPageState extends State<MainPage> {
             child: Container(
               padding: const EdgeInsets.all(8.0),
               height: 60.0,
-              child: MaterialButton(
-                hoverColor: kPrimaryColor,
-                onPressed: () => _scroll(index),
-                child: Text(
-                  childText,
-                  style: TextStyle(
-                    color:
-                        themeProvider.lightTheme ? Colors.black : Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      _scroll(index);
+                    },
+                    onHover: (val) {},
+                    child: Text(
+                      childText,
+                      style: TextStyle(
+                        color: themeProvider.lightTheme
+                            ? Colors.black
+                            : Colors.white,
+                      ),
+                    ),
                   ),
-                ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                ],
               ),
             ),
           )
@@ -235,7 +252,7 @@ class _MainPageState extends State<MainPage> {
   AppBar _appBarTabDesktop(ThemeProvider themeProv) {
     return AppBar(
       elevation: 0.0,
-      backgroundColor: themeProv.lightTheme ? Colors.white : Colors.grey[800],
+      backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
       title: MediaQuery.of(context).size.width < 780
           ? EntranceFader(
               duration: const Duration(milliseconds: 250),
@@ -259,15 +276,10 @@ class _MainPageState extends State<MainPage> {
           child: Container(
             padding: const EdgeInsets.all(8.0),
             height: 60.0,
-            child: MaterialButton(
-              hoverColor: kPrimaryColor,
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const BlogPage())),
-              child: Text(
-                "Blogs".toUpperCase(),
-                style: TextStyle(
-                  color: themeProv.lightTheme ? Colors.black : Colors.white,
-                ),
+            child: Text(
+              "Blogs".toUpperCase(),
+              style: TextStyle(
+                color: themeProv.lightTheme ? Colors.black : Colors.white,
               ),
             ),
           ),

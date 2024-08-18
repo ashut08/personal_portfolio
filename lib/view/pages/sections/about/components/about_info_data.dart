@@ -1,8 +1,7 @@
+import 'package:AshuTech/utils/colors.dart';
+import 'package:AshuTech/widgets/gradient_border.dart';
+import 'package:AshuTech/widgets/gradient_text.dart';
 import 'package:flutter/material.dart';
-
-import 'package:AshuTech/provider/theme_provider.dart';
-import 'package:AshuTech/utils/constant.dart';
-import 'package:provider/provider.dart';
 
 class AboutMeData extends StatelessWidget {
   final String data;
@@ -10,30 +9,32 @@ class AboutMeData extends StatelessWidget {
   final Alignment? alignment;
 
   const AboutMeData({
-    Key? key,
+    super.key,
     required this.data,
     required this.information,
     this.alignment,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-
     return Align(
       alignment: alignment ?? Alignment.center,
-      child: RichText(
-        text: TextSpan(
+      child: GradientBorderContainer(
+        height: 80,
+        gradient: primaryGradientColor,
+        child: Column(
           children: [
-            TextSpan(
-                text: "$data: ",
-                style: const TextStyle(
-                    color: kPrimaryColor, fontWeight: FontWeight.w400)),
-            TextSpan(
-                text: " $information",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: themeProvider.lightTheme ? Colors.black : Colors.white,
-                )),
+            const SizedBox(
+              height: 10,
+            ),
+            GradientText(
+              data,
+              gradient: primaryGradientColor,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              information,
+              style: Theme.of(context).textTheme.bodyLarge,
+            )
           ],
         ),
       ),

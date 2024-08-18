@@ -2,7 +2,7 @@ class AboutUtils {
   static const String aboutMeHeadline = 'I\'m Ashutosh Singh.';
 
   static const String aboutMeDetail =
-      'I am a programmer and designer of websites and mobile applications with more than two years of experience, as I possess the skill, creativity and innovation in my field of work, and this is what makes me distinguished from others and people love to deal with me';
+      '''As a passionate Mobile App Developer, I bring a blend of creativity and technical precision to mobile app development. My journey has equipped me with a deep understanding of cross-platform technologies and a commitment to delivering apps that not only perform flawlessly but also provide exceptional user experiences.I thrive in dynamic, collaborative environments where innovation is key. If you have a project idea, I’m here to help you bring it to life with cutting-edge technology and a strategic approach.''';
 
   static const String email = "ashusingh.unch8@gmail.com";
   static const String dob = "08-09-1998";

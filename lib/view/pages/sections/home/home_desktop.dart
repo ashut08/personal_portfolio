@@ -9,8 +9,10 @@ import 'package:AshuTech/utils/sizeconfig.dart';
 import 'package:AshuTech/widgets/social_icons.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../widgets/gradient_text.dart';
+
 class HomeMobile extends StatelessWidget {
-  const HomeMobile({Key? key}) : super(key: key);
+  const HomeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class HomeMobile extends StatelessWidget {
                 Text(
                   "Hello",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.openSans(
                       fontSize: height * 0.055,
                       color: themeProvider.lightTheme
                           ? Colors.black
@@ -69,7 +71,7 @@ class HomeMobile extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: 'I am  ',
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.openSans(
                               fontSize: height * 0.055,
                               color: themeProvider.lightTheme
                                   ? Colors.black
@@ -79,7 +81,7 @@ class HomeMobile extends StatelessWidget {
                         ),
                         TextSpan(
                           text: ' Ashutosh',
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.openSans(
                               fontSize: height * 0.055,
                               color: kPrimaryColor,
                               fontWeight: FontWeight.w900,
@@ -87,7 +89,7 @@ class HomeMobile extends StatelessWidget {
                         ),
                         TextSpan(
                           text: ' Singh',
-                          style: GoogleFonts.montserrat(
+                          style: GoogleFonts.openSans(
                               fontSize: height * 0.055,
                               color: themeProvider.lightTheme
                                   ? Colors.black
@@ -122,7 +124,7 @@ class HomeMobile extends StatelessWidget {
                             animatedTexts: [
                               TypewriterAnimatedText(
                                 'Mobile Apps Developer',
-                                textStyle: GoogleFonts.montserrat(
+                                textStyle: GoogleFonts.openSans(
                                     fontSize: height * 0.030,
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.w900,
@@ -132,7 +134,7 @@ class HomeMobile extends StatelessWidget {
                               ),
                               TypewriterAnimatedText(
                                 'Flutter Developer',
-                                textStyle: GoogleFonts.montserrat(
+                                textStyle: GoogleFonts.openSans(
                                     fontSize: height * 0.03,
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.w900,
@@ -142,7 +144,7 @@ class HomeMobile extends StatelessWidget {
                               ),
                               TypewriterAnimatedText(
                                 'Technical Writer',
-                                textStyle: GoogleFonts.montserrat(
+                                textStyle: GoogleFonts.openSans(
                                     fontSize: height * 0.030,
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.w900,
@@ -152,7 +154,7 @@ class HomeMobile extends StatelessWidget {
                               ),
                               TypewriterAnimatedText(
                                 'Web Developer',
-                                textStyle: GoogleFonts.montserrat(
+                                textStyle: GoogleFonts.openSans(
                                     fontSize: height * 0.030,
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.w900,
@@ -162,7 +164,7 @@ class HomeMobile extends StatelessWidget {
                               ),
                               TypewriterAnimatedText(
                                 'DevOps enthusiastic',
-                                textStyle: GoogleFonts.montserrat(
+                                textStyle: GoogleFonts.openSans(
                                     fontSize: height * 0.03,
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.w900,
@@ -172,7 +174,7 @@ class HomeMobile extends StatelessWidget {
                               ),
                               TypewriterAnimatedText(
                                 'UI/UX enthusiastic',
-                                textStyle: GoogleFonts.montserrat(
+                                textStyle: GoogleFonts.openSans(
                                     fontSize: height * 0.03,
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.w900,
@@ -198,18 +200,6 @@ class HomeMobile extends StatelessWidget {
                 //  aboutMe(),
                 SizedBox(
                   height: height * 0.035,
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    for (int i = 0; i < kSocialIcons.length; i++)
-                      SocialMediaIcon(
-                        icon: kSocialIcons[i],
-                        socialLink: kSocialLinks[i],
-                        height: height * 0.03,
-                        horizontalPadding: 2.0,
-                      )
-                  ],
                 ),
               ],
             ),

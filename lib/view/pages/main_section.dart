@@ -32,21 +32,21 @@ class SectionsBody extends StatelessWidget {
             itemBuilder: (context, index) => sectionWidget(index),
           ),
         ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              for (int i = 0; i < kSocialIcons.length; i++)
-                SocialMediaIcon(
-                  icon: kSocialIcons[i],
-                  socialLink: kSocialLinks[i],
-                  height: height * 0.03,
-                  horizontalPadding: 2.0,
-                )
-            ],
-          ),
-        ),
+        // Align(
+        //   alignment: Alignment.centerLeft,
+        //   child: Column(
+        //     mainAxisSize: MainAxisSize.min,
+        //     children: [
+        //       for (int i = 0; i < kSocialIcons.length; i++)
+        //         SocialMediaIcon(
+        //           icon: kSocialIcons[i],
+        //           socialLink: kSocialLinks[i],
+        //           height: height * 0.03,
+        //           horizontalPadding: 2.0,
+        //         )
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }

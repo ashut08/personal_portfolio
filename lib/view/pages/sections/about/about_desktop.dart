@@ -1,3 +1,6 @@
+import 'package:AshuTech/config/space.dart';
+import 'package:AshuTech/widgets/divider.dart';
+import 'package:AshuTech/widgets/gradient_text.dart';
 import 'package:flutter/material.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
 import 'package:AshuTech/utils/about_utils.dart';
@@ -8,8 +11,10 @@ import 'package:AshuTech/view/pages/sections/about/components/resume_download_bu
 import 'package:AshuTech/view/pages/sections/about/components/tech_widget.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../utils/colors.dart';
+
 class AboutDesktop extends StatelessWidget {
-  const AboutDesktop({Key? key}) : super(key: key);
+  const AboutDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +25,20 @@ class AboutDesktop extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(20),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
-            flex: 1,
+          SizedBox(
+            width: width! * 0.05,
+          ),
+          Center(
             child: Container(
-              height: height! * 0.9,
+              alignment: Alignment.center,
+              height: height! * 0.6,
               //   height: height! / 2.6,
               color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
               child: Container(
-                height: height * 0.9,
+                height: height * 0.6,
                 padding: const EdgeInsets.all(6),
                 child: Image.asset(
                   "assets/dpimage/image.jpeg",
@@ -39,54 +47,45 @@ class AboutDesktop extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            width: 10,
+          SizedBox(
+            width: width * 0.05,
           ),
           Expanded(
-              flex: width! < 1230 ? 2 : 1,
+              flex: width < 1230 ? 2 : 1,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Stack(
-                    alignment: Alignment.bottomCenter,
+                  Row(
                     children: [
-                      Center(
-                        child: Text(
-                          "About Me".toUpperCase(),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: height * 0.075,
-                            color: themeProvider.lightTheme
-                                ? Colors.black.withOpacity(0.2)
-                                : Colors.white.withOpacity(0.2),
-                          ),
-                        ),
+                      const CustomDivider(
+                        height: 4,
+                        width: 33,
                       ),
-                      Positioned(
-                        bottom: 8,
-                        child: Text(
-                          AboutUtils.aboutMeHeadline,
-                          style: TextStyle(
-                            fontSize: height * 0.035,
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      GradientText(
+                        "About Me",
+                        gradient: primaryGradientColor,
+                        style: Theme.of(context).textTheme.displaySmall,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const CustomDivider(
+                        height: 4,
+                        width: 33,
                       ),
                     ],
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(AboutUtils.aboutMeDetail,
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: themeProvider.lightTheme
-                            ? Colors.black
-                            : Colors.white,
-                      )),
+                  Text(
+                    AboutUtils.aboutMeDetail,
+                    textAlign: TextAlign.justify,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
                   // size10,
                   Divider(
                     height: 15,
@@ -95,8 +94,9 @@ class AboutDesktop extends StatelessWidget {
                   ),
                   size10,
                   const Center(
-                    child: Text(
+                    child: GradientText(
                       "Technologies I Have Worked With:",
+                      gradient: primaryGradientColor,
                       style: TextStyle(
                           fontSize: 18,
                           color: kPrimaryColor,
@@ -119,9 +119,9 @@ class AboutDesktop extends StatelessWidget {
                         themeProvider.lightTheme ? Colors.black : Colors.white,
                   ),
                   size10,
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       AboutMeData(
                         alignment: Alignment.topLeft,
                         data: "Name",
@@ -158,7 +158,10 @@ class AboutDesktop extends StatelessWidget {
                   size10,
                   const ResumeDownloadButton()
                 ],
-              ))
+              )),
+          SizedBox(
+            width: width * 0.05,
+          ),
         ],
       ),
     );

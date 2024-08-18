@@ -5,14 +5,14 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SeeMore extends StatelessWidget {
-  const SeeMore({Key? key}) : super(key: key);
+  const SeeMore({super.key});
 
   @override
   Widget build(BuildContext context) {
     final themProv = Provider.of<ThemeProvider>(context);
     return InkWell(
       onTap: () {
-        launchUrlString(kSocialLinks[5]);
+        //  launchUrlString(k[5]);
       },
       child: Container(
         padding: const EdgeInsets.all(8),
