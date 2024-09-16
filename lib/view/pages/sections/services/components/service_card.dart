@@ -22,18 +22,15 @@ class ServiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(isFocus);
     SizeConfig().init(context);
     var height = SizeConfig.screenHeight;
     // var width = SizeConfig.screenWidth;
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
       padding: const EdgeInsets.all(10),
-      height: 350,
-      width: 400,
-      margin: const EdgeInsets.only(top: 20, bottom: 20),
+      margin: const EdgeInsets.only(top: 20, bottom: 20, right: 10, left: 10),
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: themeProvider.lightTheme ? Colors.white : Colors.black,
         borderRadius: BorderRadius.circular(12),
         boxShadow: isFocus == true
             ? [

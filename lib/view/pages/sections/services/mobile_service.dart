@@ -72,27 +72,33 @@ class _ServiceMobileState extends State<ServiceMobile> {
         size10,
         size10,
         CarouselSlider.builder(
-            itemCount: ServiceUtils.serviceUtils.length,
-            options: CarouselOptions(
-                viewportFraction: 0.8,
-                aspectRatio: 16 / 14,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 5),
-                enlargeCenterPage: true,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                enableInfiniteScroll: false,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentPos = index;
-                  });
-                }),
-            itemBuilder: (context, index, i) => ServiceCard(
-                  image: ServiceUtils.serviceUtils[index].serviceImage,
-                  serviceName: ServiceUtils.serviceUtils[index].serviceName,
-                  serviceDescription:
-                      ServiceUtils.serviceUtils[index].serviceDescription,
-                )),
+          itemCount: ServiceUtils.serviceUtils.length,
+          options: CarouselOptions(
+            initialPage: 1,
+            viewportFraction: 0.9,
+            aspectRatio: 16 / 14,
+            autoPlay: true,
+            reverse: true,
+            autoPlayInterval: const Duration(seconds: 5),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            autoPlayAnimationDuration: const Duration(milliseconds: 800),
+            enableInfiniteScroll: true,
+            onPageChanged: (index, reason) {
+              setState(
+                () {
+                  currentPos = index;
+                },
+              );
+            },
+          ),
+          itemBuilder: (context, index, i) => ServiceCard(
+            isFocus: currentPos == index,
+            image: ServiceUtils.serviceUtils[index].serviceImage,
+            serviceName: ServiceUtils.serviceUtils[index].serviceName,
+            serviceDescription:
+                ServiceUtils.serviceUtils[index].serviceDescription,
+          ),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: ServiceUtils.serviceUtils.map((url) {

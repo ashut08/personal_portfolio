@@ -55,9 +55,6 @@ final kTools = [
   "Git",
 ];
 
-// services
-final kServicesIcons = [];
-
 final kServicesTitles = [
   "Mobile App Development",
   "UI/UX Designing",
@@ -67,33 +64,3 @@ final kServicesTitles = [
 ];
 
 const String mediumrl = "https://ashuflutterdev.medium.com/";
-
-// ignore: non_constant_identifier_names
-
-final kServicesDescriptions = [];
-
-// projects
-final kProjectsBanner = [];
-
-final kProjectsIcons = [];
-
-final kProjectsTitles = [];
-
-final kProjectsDescriptions = [];
-
-final kProjectsLinks = [];
-
-// Contact
-final kContactIcons = [
-  Icons.home,
-  Icons.phone,
-  Icons.mail,
-];
-
-final kContactTitles = [
-  "Location",
-  "Phone",
-  "Email",
-];
-
-final kContactDetails = [];

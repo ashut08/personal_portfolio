@@ -40,7 +40,9 @@ class _MainPageState extends State<MainPage> {
                   ? MediaQuery.of(context).size.height * 1.98
                   : i == 3
                       ? MediaQuery.of(context).size.height * 2.9
-                      : MediaQuery.of(context).size.height * 4,
+                      : i == 4
+                          ? MediaQuery.of(context).size.height * 4
+                          : MediaQuery.of(context).size.height * 4.5,
       duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );
@@ -56,9 +58,9 @@ class _MainPageState extends State<MainPage> {
     } else if (i == 3) {
       return const MyProject();
     } else if (i == 4) {
-      return const ContactMe();
+      return const BlogPage();
     } else if (i == 5) {
-      return const Footer();
+      return const ContactMe();
     } else {
       return const Footer();
     }
@@ -69,7 +71,8 @@ class _MainPageState extends State<MainPage> {
     "ABOUT",
     "SERVICES",
     "PROJECTS",
-    "CONTACT"
+    "BLOGS",
+    "CONTACTS"
   ];
 
   final ThemeProvider _themeProviders = ThemeProvider();
@@ -78,7 +81,7 @@ class _MainPageState extends State<MainPage> {
     Icons.person,
     Icons.settings,
     Icons.build,
-    //Icons.article,
+    Icons.article,
     Icons.phone,
   ];
   @override
@@ -269,27 +272,12 @@ class _MainPageState extends State<MainPage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], themeProv),
-        EntranceFader(
-          offset: const Offset(0, -10),
-          delay: const Duration(milliseconds: 100),
-          duration: const Duration(milliseconds: 250),
-          child: Container(
-            padding: const EdgeInsets.all(8.0),
-            height: 60.0,
-            child: Text(
-              "Blogs".toUpperCase(),
-              style: TextStyle(
-                color: themeProv.lightTheme ? Colors.black : Colors.white,
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(width: 15.0),
         SizedBox(
             height: 30.0,
             child: InkWell(
               onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
               child: Container(
+                alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,

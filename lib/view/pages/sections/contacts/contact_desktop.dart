@@ -1,12 +1,17 @@
+import 'package:AshuTech/widgets/divider.dart';
+import 'package:AshuTech/widgets/gradient_text.dart';
 import 'package:flutter/material.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
 import 'package:AshuTech/utils/constant.dart';
 import 'package:AshuTech/view/pages/sections/contacts/components/all_contact_link.dart';
 import 'package:AshuTech/view/pages/sections/contacts/components/contact_form.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../utils/colors.dart';
+
 class ContactDesktop extends StatelessWidget {
-  const ContactDesktop({Key? key}) : super(key: key);
+  const ContactDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,59 +19,33 @@ class ContactDesktop extends StatelessWidget {
     final themProv = Provider.of<ThemeProvider>(context);
     return Column(
       children: [
-        Stack(
-          alignment: Alignment.bottomCenter,
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Text(
-                "Contact".toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: height * 0.075,
-                  color: themProv.lightTheme
-                      ? Colors.black.withOpacity(0.2)
-                      : Colors.white.withOpacity(0.2),
-                ),
-              ),
+            const CustomDivider(
+              height: 4,
+              width: 33,
             ),
-            Positioned(
-              bottom: 8,
-              child: Text(
-                "Send Message",
-                style: TextStyle(
-                  fontSize: height * 0.035,
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
+            const SizedBox(
+              width: 10,
+            ),
+            GradientText(
+              "Contact Me",
+              gradient: primaryGradientColor,
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            const CustomDivider(
+              height: 4,
+              width: 33,
             ),
           ],
         ),
-        size10,
-        size10,
-        Container(
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              border: Border.all(color: kPrimaryColor),
-              borderRadius: BorderRadius.circular(6)),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Expanded(
-                child: AllContactLink(),
-              ),
-              // Flexible(
-              //   child: Container(
-              //     color: kPrimaryColor,
-              //     width: 10,
-              //     //height: double.infinity,
-              //   ),
-              // ),
-              Expanded(child: ContactForm())
-            ],
-          ),
+        const Column(
+          children: [ContactForm(), AllContactLink()],
         )
       ],
     );

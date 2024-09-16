@@ -9,11 +9,11 @@ class SectionsBody extends StatelessWidget {
   final Widget Function(int) sectionWidget;
 
   const SectionsBody({
-    Key? key,
+    super.key,
     required this.scrollController,
     required this.sectionsLength,
     required this.sectionWidget,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -24,13 +24,15 @@ class SectionsBody extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: ListView.builder(
-            // padding: const EdgeInsets.all(20),
-            // physics: !kIsWeb ? ScrollPhysics() : NeverScrollableScrollPhysics(),
-            controller: scrollController,
-            shrinkWrap: true,
-            itemCount: sectionsLength,
-            itemBuilder: (context, index) => sectionWidget(index),
-          ),
+              // padding: const EdgeInsets.all(20),
+              // physics: !kIsWeb ? ScrollPhysics() : NeverScrollableScrollPhysics(),
+              controller: scrollController,
+              shrinkWrap: true,
+              itemCount: sectionsLength,
+              itemBuilder: (context, index) {
+                print(index);
+                return sectionWidget(index);
+              }),
         ),
         // Align(
         //   alignment: Alignment.centerLeft,

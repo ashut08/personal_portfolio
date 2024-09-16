@@ -1,3 +1,4 @@
+import 'package:AshuTech/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:AshuTech/models/medium_blog_model.dart';
@@ -7,10 +8,14 @@ import 'package:AshuTech/utils/sizeconfig.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+import '../../../../../widgets/divider.dart';
+import '../../../../../widgets/gradient_text.dart';
+
 // ignore: must_be_immutable
 class BLogCard extends StatefulWidget {
-  BLogCard({super.key, this.item});
-  Items? item;
+  BLogCard({super.key, this.item, this.isFocus});
+  ArticleModel? item;
+  bool? isFocus;
   @override
   State<BLogCard> createState() => _BLogCardState();
 }
@@ -31,155 +36,103 @@ class _BLogCardState extends State<BLogCard> {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         onTap: () => launchUrlString(
-              widget.item!.link,
+              widget.item!.link ?? "",
             ),
-        onHover: (value) {
-          if (value) {
-            setState(() {
-              isHover = true;
-              elevation = 1.3;
-              scale = 1.1;
-              translate = const Offset(2, 2);
-            });
-          } else {
-            setState(() {
-              isHover = false;
-              elevation = 1;
-              scale = 1;
-              translate = const Offset(0, 0);
-            });
-          }
-        },
-        child: Transform.translate(
-            offset: translate,
-            child: Transform.scale(
-              scale: scale,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: themeProvider.lightTheme
-                      ? Colors.white
-                      : Colors.grey[800],
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  boxShadow: [
-                    !isHover
-                        ? const BoxShadow(
-                            blurRadius: 8,
-                            spreadRadius: 2,
-                            offset: Offset(0, 4),
-                            color: Colors.grey)
-                        : BoxShadow(
-                            blurRadius: 10,
-                            spreadRadius: 4,
-                            offset: const Offset(0, 4),
-                            color: kPrimaryColor.withOpacity(0.5),
-                          ),
-                  ],
-                ),
-                margin: isHover
-                    ? const EdgeInsets.all(20)
-                    : const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                // height: height! * 0.3,
+        child: Container(
+          margin:
+              const EdgeInsets.only(top: 20, bottom: 20, right: 10, left: 10),
+          decoration: BoxDecoration(
+            color: themeProvider.lightTheme ? Colors.white : Colors.black,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: widget.isFocus == true
+                ? [
+                    BoxShadow(
+                        color: const Color(0xffA436FC).withOpacity(0.45),
+                        blurRadius: 11,
+                        spreadRadius: 3)
+                  ]
+                : [],
+          ),
+
+          // height: height! * 0.3,
+          width: width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 150,
                 width: width,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(12),
+                      topLeft: Radius.circular(12)),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage(widget.item?.image ?? ""),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Wrap(
+                  runSpacing: 10.0,
+                  spacing: 10.0,
+                  children: widget.item!.categories!
+                      .asMap()
+                      .entries
+                      .map(
+                        (e) => Container(
+                            padding: const EdgeInsets.all(3),
+                            decoration: BoxDecoration(
+                                gradient: primaryGradientColor,
+                                borderRadius: BorderRadius.circular(3)),
+                            child: Text(
+                              e.value,
+                              style: Theme.of(context).textTheme.bodySmall,
+                            )),
+                      )
+                      .toList(),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
                   children: [
-                    Image.network(
-                      widget.item!.thumbnail,
-                      width: width,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Divider(
-                      color: Colors.grey,
-                    ),
-                    Wrap(
-                      runSpacing: 5.0,
-                      spacing: 5.0,
-                      children: [
-                        Container(
-                            padding: const EdgeInsets.all(3),
-                            decoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(3)),
-                            child: Text(
-                              widget.item!.categories[0],
-                              style: TextStyle(
-                                  color: themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.white),
-                            )),
-                        Container(
-                            padding: const EdgeInsets.all(3),
-                            decoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(3)),
-                            child: Text(
-                              widget.item!.categories[1],
-                              style: TextStyle(
-                                  color: themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.white),
-                            )),
-                        Container(
-                            padding: const EdgeInsets.all(3),
-                            decoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(3)),
-                            child: Text(
-                              widget.item!.categories[2],
-                              style: TextStyle(
-                                  color: themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.white),
-                            )),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "Published Date : ",
-                          style: TextStyle(
-                              color: themeProvider.lightTheme
-                                  ? Colors.black
-                                  : Colors.white),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(4),
-                          decoration: const BoxDecoration(
-                              color: kPrimaryColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(4))),
-                          child: Text(
-                            widget.item!.pubDate.substring(0, 10),
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     Text(
-                      widget.item!.title,
-                      //  overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.openSans(
-                          fontSize: 16,
+                      "Published Date : ",
+                      style: TextStyle(
                           color: themeProvider.lightTheme
                               ? Colors.black
-                              : Colors.white,
-                          fontWeight: FontWeight.w700),
+                              : Colors.white),
                     ),
-                    const SizedBox(
-                      height: 30,
+                    Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: const BoxDecoration(
+                          gradient: primaryGradientColor,
+                          borderRadius: BorderRadius.all(Radius.circular(4))),
+                      child: Text(
+                        widget.item!.pubDate!,
+                        style: const TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
               ),
-            )));
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  widget.item!.title!,
+                  //  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.openSans(
+                      fontSize: 16,
+                      color: themeProvider.lightTheme
+                          ? Colors.black
+                          : Colors.white,
+                      fontWeight: FontWeight.w700),
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }
