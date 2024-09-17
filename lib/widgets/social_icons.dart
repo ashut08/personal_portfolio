@@ -40,7 +40,7 @@ class _SocialMediaIconState extends State<SocialMediaIcon> {
         onExit: (event) => _onHover(false),
         child: IconButton(
           icon: Container(
-            width: ScreenHelper.isDesktop(context) ? 80 : 40,
+            width: ScreenHelper.isDesktop(context) ? 80 : 30,
             padding: EdgeInsets.all(ScreenHelper.isDesktop(context) ? 8 : 5),
             height: ScreenHelper.isDesktop(context) ? 80 : 40,
             child: _isHovered
