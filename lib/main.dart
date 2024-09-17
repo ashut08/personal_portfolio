@@ -2,15 +2,15 @@ import 'package:AshuTech/utils/theme_style.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:AshuTech/firebase_options.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
 import 'package:AshuTech/view/pages/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-      .then((value) => runApp(const MyApp()));
+  runApp(const child: MyApp());
+  // Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+  //     .then((value) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
