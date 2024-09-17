@@ -19,7 +19,7 @@ class AboutMeData extends StatelessWidget {
     return Align(
       alignment: alignment ?? Alignment.center,
       child: GradientBorderContainer(
-        height: 80,
+        height: 90,
         gradient: primaryGradientColor,
         child: Column(
           children: [

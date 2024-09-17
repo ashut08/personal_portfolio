@@ -272,32 +272,88 @@ class _MainPageState extends State<MainPage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], themeProv),
-        SizedBox(
-            height: 30.0,
-            child: InkWell(
-              onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
-              child: Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: themeProv.lightTheme ? Colors.grey : Colors.white),
-                child: Icon(
-                    themeProv.lightTheme
-                        ? Icons.light_mode_outlined
-                        : Icons.dark_mode_outlined,
-                    color: kPrimaryColor),
+        GestureDetector(
+          onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            height: 40,
+            width: 80,
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                colors: themeProv.lightTheme
+                    ? [Colors.black45, Colors.black87]
+                    : gradientColor,
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
               ),
-            )
-
-            // Switch(
-            //   inactiveTrackColor: Colors.grey,
-            //   value: !themeProv.lightTheme,
-            //   onChanged: (value) {
-            //     themeProv.lightTheme = !value;
-            //   },
-
             ),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: !themeProv.lightTheme
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      color:
+                          !themeProv.lightTheme ? Colors.black : Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: !themeProv.lightTheme
+                              ? Colors.white.withOpacity(0.2)
+                              : Colors.black.withOpacity(0.2),
+                          blurRadius: 5,
+                          spreadRadius: 1,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Icon(
+                      themeProv.lightTheme ? Icons.nights_stay : Icons.wb_sunny,
+                      color:
+                          themeProv.lightTheme ? Colors.white : kPrimaryColor,
+                      size: 30,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        // SizedBox(
+        //     height: 30.0,
+        //     child: InkWell(
+        //       onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
+        //       child: Container(
+        //         alignment: Alignment.center,
+        //         padding: const EdgeInsets.all(10),
+        //         decoration: BoxDecoration(
+        //             shape: BoxShape.circle,
+        //             color: themeProv.lightTheme ? Colors.grey : Colors.white),
+        //         child: Padding(
+        //           padding: const EdgeInsets.only(bottom: 4),
+        //           child: Icon(
+        //               themeProv.lightTheme
+        //                   ? Icons.light_mode_outlined
+        //                   : Icons.dark_mode_outlined,
+        //               color: kPrimaryColor),
+        //         ),
+        //       ),
+        //     )
+
+        //     // Switch(
+        //     //   inactiveTrackColor: Colors.grey,
+        //     //   value: !themeProv.lightTheme,
+        //     //   onChanged: (value) {
+        //     //     themeProv.lightTheme = !value;
+        //     //   },
+
+        //     ),
         const SizedBox(width: 15.0),
       ],
     );

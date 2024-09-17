@@ -9,6 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../../../utils/colors.dart';
+import '../../../../utils/screen_helper.dart';
 import '../../../../widgets/divider.dart';
 import '../../../../widgets/gradient_text.dart';
 
@@ -86,10 +87,12 @@ class _BlogPageState extends State<BlogPage> {
                 const SizedBox(
                   width: 10,
                 ),
-                const CustomDivider(
-                  height: 4,
-                  width: 33,
-                ),
+                ScreenHelper.isMobile(context)
+                    ? const SizedBox()
+                    : const CustomDivider(
+                        height: 4,
+                        width: 33,
+                      ),
               ],
             ),
             const Spacer(),
@@ -157,17 +160,20 @@ class _BlogPageState extends State<BlogPage> {
   }
 
   Widget buildDot(int index) {
+    final themeProv = Provider.of<ThemeProvider>(context);
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       margin: const EdgeInsets.symmetric(horizontal: 5),
       height: 8,
       width: currentPage == index ? 16 : 8,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: themeProv.lightTheme ? Colors.black : Colors.white,
         gradient: LinearGradient(
           colors: currentPage == index
               ? gradientColor
-              : [Colors.white, Colors.white],
+              : themeProv.lightTheme
+                  ? [Colors.black, Colors.black]
+                  : [Colors.white, Colors.white],
         ),
         borderRadius: BorderRadius.circular(4),
       ),

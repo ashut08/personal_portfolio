@@ -61,7 +61,7 @@ class ProjectDesktop extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   GradientText(
-                    "Read More",
+                    "See More",
                     gradient: primaryGradientColor,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
@@ -101,7 +101,7 @@ class ProjectDesktop extends StatelessWidget {
         SizedBox(
           height: height * 0.03,
         ),
-        const SeeMore(),
+        
         SizedBox(
           height: height * 0.03,
         ),

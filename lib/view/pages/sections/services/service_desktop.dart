@@ -147,17 +147,20 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
   }
 
   Widget buildDot(int index) {
+    final themeProv = Provider.of<ThemeProvider>(context);
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       margin: const EdgeInsets.symmetric(horizontal: 5),
       height: 8,
       width: currentPage == index ? 16 : 8,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: themeProv.lightTheme ? Colors.black : Colors.white,
         gradient: LinearGradient(
           colors: currentPage == index
               ? gradientColor
-              : [Colors.white, Colors.white],
+              : themeProv.lightTheme
+                  ? [Colors.black, Colors.black]
+                  : [Colors.white, Colors.white],
         ),
         borderRadius: BorderRadius.circular(4),
       ),

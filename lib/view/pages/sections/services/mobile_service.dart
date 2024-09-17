@@ -1,3 +1,4 @@
+import 'package:AshuTech/utils/screen_helper.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
@@ -50,22 +51,13 @@ class _ServiceMobileState extends State<ServiceMobile> {
                 const SizedBox(
                   width: 10,
                 ),
-                const CustomDivider(
-                  height: 4,
-                  width: 33,
-                ),
+                ScreenHelper.isMobile(context)
+                    ? const SizedBox()
+                    : const CustomDivider(
+                        height: 4,
+                        width: 33,
+                      ),
               ],
-            ),
-            Positioned(
-              bottom: 8,
-              child: Text(
-                "What I Offer",
-                style: TextStyle(
-                  fontSize: height! * 0.032,
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
             ),
           ],
         ),

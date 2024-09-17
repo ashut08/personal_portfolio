@@ -85,7 +85,7 @@ List<ArticleModel> kblogList = [
     title: "CI/CD Using Docker, Jenkins, and Git.",
     description:
         "In today’s ever-evolving landscape, one of the top challenges for software companies is quickly responding...",
-    image: "https://miro.medium.com/v2/format:webp/0*0bSwn32aFYUUU2jog",
+    image: "https://www.jenkins.io/images/docker/dockerJenkins.png",
     pubDate: "Jul 7, 2020",
     categories: [
       'Git',

@@ -5,7 +5,7 @@ import 'package:AshuTech/view/pages/sections/home/home_desktops.dart';
 import 'package:AshuTech/view/pages/sections/home/home_tab.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return const ScreenHelper(
       desktop: HomeDesktop(),
       mobile: HomeMobile(),
-      tablet: HomeTab(),
+      tablet: HomeDesktop(),
     );
   }
 }
