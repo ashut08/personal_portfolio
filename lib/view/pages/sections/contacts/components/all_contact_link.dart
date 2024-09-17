@@ -22,14 +22,10 @@ class AllContactLink extends StatelessWidget {
         children: [
           buildTile("assets/newicon/location.svg", "Location",
               AboutUtils.addreess, context),
-          const Spacer(
-            flex: 2,
-          ),
+          
           buildTile(
               "assets/newicon/email.svg", "Email", AboutUtils.email, context),
-          const Spacer(
-            flex: 2,
-          ),
+          
           buildTile("assets/newicon/contact.svg", "Phone", AboutUtils.mobileNo,
               context),
         ],
