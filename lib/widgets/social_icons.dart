@@ -69,9 +69,7 @@ class _SocialMediaIconState extends State<SocialMediaIcon> {
           ),
           iconSize: widget.height,
           onPressed: () async {
-            await FirebaseAnalytics.instance.logEvent(
-              name: 'Click Social media Profile',
-            );
+            
             url.launchUrl(Uri.parse(widget.socialLink!));
           },
           hoverColor: Colors.transparent,
