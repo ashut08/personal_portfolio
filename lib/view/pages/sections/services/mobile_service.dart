@@ -23,6 +23,8 @@ class _ServiceMobileState extends State<ServiceMobile> {
   int currentPos = 0;
   @override
   Widget build(BuildContext context) {
+        var height = SizeConfig.screenHeight;
+    var width = SizeConfig.screenWidth;
 
 // Calculate a responsive aspect ratio based on screen width and height
     double calculateAspectRatio(double width, double height) {
@@ -48,7 +50,7 @@ class _ServiceMobileState extends State<ServiceMobile> {
     double aspectRatio = calculateAspectRatio(width!, height!);
 
     SizeConfig().init(context);
-    var height = SizeConfig.screenHeight;
+
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Column(
