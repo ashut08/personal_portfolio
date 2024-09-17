@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const child: MyApp());
+   runApp(const MyApp());
   // Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
   //     .then((value) => runApp(const MyApp()));
 }
