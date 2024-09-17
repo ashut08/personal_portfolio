@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer' as dev;
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'package:AshuTech/utils/emailjs_constant.dart';
+
 
 class SenEmail {
   String url = "";
@@ -12,10 +12,10 @@ class SenEmail {
       required String message}) async {
     Response response = http.Response("", 400);
     final map = {
-      'service_id': EmailJsConstant.serviceId,
-      'template_id': EmailJsConstant.templateId,
-      'user_id': EmailJsConstant.userId,
-      'accessToken': EmailJsConstant.accessToken,
+      // 'service_id': EmailJsConstant.serviceId,
+      // 'template_id': EmailJsConstant.templateId,
+      // 'user_id': EmailJsConstant.userId,
+      // 'accessToken': EmailJsConstant.accessToken,
       'template_params': {
         'user_email': email,
         'user_name': name,
