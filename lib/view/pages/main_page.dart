@@ -396,41 +396,7 @@ class _MainPageState extends State<MainPage> {
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
-              EntranceFader(
-                offset: const Offset(0, -10),
-                delay: const Duration(milliseconds: 100),
-                duration: const Duration(milliseconds: 250),
-                child: Container(
-                  margin: const EdgeInsets.only(right: 20, left: 20),
-                  padding: const EdgeInsets.all(8.0),
-                  height: 60.0,
-                  child: MaterialButton(
-                    hoverColor: kPrimaryColor,
-                    onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const BlogPage())),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.article_outlined,
-                          color: kPrimaryColor,
-                        ),
-                        const SizedBox(
-                          width: 30,
-                        ),
-                        Text(
-                          "Blogs".toUpperCase(),
-                          style: TextStyle(
-                            color:
-                                theme.lightTheme ? Colors.black : Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
+            
             ],
           ),
         ),
