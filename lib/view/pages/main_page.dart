@@ -61,7 +61,9 @@ class _MainPageState extends State<MainPage> {
       return const BlogPage();
     } else if (i == 5) {
       return const ContactMe();
-    } 
+    } else{
+      return Container();
+    }
   }
 
   final List<String> _sectionsName = [
