@@ -31,9 +31,6 @@ class _ResumeDownloadButtonState extends State<ResumeDownloadButton> {
           color: themeProvider.lightTheme ? Colors.white : Colors.black),
       child: InkWell(
         onTap: () async {
-          await FirebaseAnalytics.instance.logEvent(
-            name: 'Click Download Resume',
-          );
           launchUrl(
             Uri.parse(AboutUtils.resumeurl),
           );
