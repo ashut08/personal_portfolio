@@ -103,7 +103,7 @@ class AboutMoile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AboutMeData(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.center,
               data: "Name",
               information: AboutUtils.name,
             ),
@@ -111,7 +111,7 @@ class AboutMoile extends StatelessWidget {
               width: 10,
             ),
             AboutMeData(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.center,
               data: "Email",
               information: AboutUtils.email,
             ),
@@ -122,7 +122,7 @@ class AboutMoile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AboutMeData(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.center,
               data: "Age",
               information: AboutUtils().ageCalculate(AboutUtils.dob).toString(),
             ),
@@ -130,7 +130,7 @@ class AboutMoile extends StatelessWidget {
               width: 10,
             ),
             const AboutMeData(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.center,
               data: "Address",
               information: AboutUtils.addreess,
             ),

@@ -23,8 +23,34 @@ class _ServiceMobileState extends State<ServiceMobile> {
   int currentPos = 0;
   @override
   Widget build(BuildContext context) {
+        var height = SizeConfig.screenHeight;
+    var width = SizeConfig.screenWidth;
+
+// Calculate a responsive aspect ratio based on screen width and height
+    double calculateAspectRatio(double width, double height) {
+      double aspectRatio = 0.0;
+
+      if (width > 1200) {
+        // For large screens, use a smaller aspect ratio to make the cards wider
+        aspectRatio = width /
+            (height *
+                0.6); // You can tweak the 1.2 multiplier to adjust the aspect ratio
+      } else if (width > 800) {
+        // For medium screens, use a moderate aspect ratio
+        aspectRatio =
+            width / (height * 0.9); // Adjust as needed to maintain balance
+      } else {
+        // For small screens, use a taller aspect ratio
+        aspectRatio = width / (height); // Make the cards taller
+      }
+
+      return aspectRatio;
+    }
+
+    double aspectRatio = calculateAspectRatio(width!, height!);
+
     SizeConfig().init(context);
-    var height = SizeConfig.screenHeight;
+
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Column(
@@ -68,7 +94,7 @@ class _ServiceMobileState extends State<ServiceMobile> {
           options: CarouselOptions(
             initialPage: 1,
             viewportFraction: 0.9,
-            aspectRatio: 16 / 14,
+            aspectRatio: aspectRatio,
             autoPlay: true,
             reverse: true,
             autoPlayInterval: const Duration(seconds: 5),
