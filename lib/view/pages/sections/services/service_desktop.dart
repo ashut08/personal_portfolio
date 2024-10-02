@@ -39,7 +39,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
             width / (height * 0.9); // Adjust as needed to maintain balance
       } else {
         // For small screens, use a taller aspect ratio
-        aspectRatio = width / (height); // Make the cards taller
+        aspectRatio = 0.8; // Make the cards taller
       }
 
       return aspectRatio;

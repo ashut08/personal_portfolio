@@ -22,7 +22,7 @@ class ProjectDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     var height = SizeConfig.screenHeight;
-    // var width = SizeConfig.screenWidth;
+    var width = SizeConfig.screenWidth;
     return Column(
       children: [
         size10,
@@ -42,15 +42,19 @@ class ProjectDesktop extends StatelessWidget {
                 GradientText(
                   "My Work",
                   gradient: primaryGradientColor,
-                  style: Theme.of(context).textTheme.displaySmall,
+                  style: width! > 1200
+                      ? Theme.of(context).textTheme.headlineMedium
+                      : Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(
                   width: 10,
                 ),
-                const CustomDivider(
-                  height: 4,
-                  width: 33,
-                ),
+                width < 1200
+                    ? const SizedBox()
+                    : const CustomDivider(
+                        height: 4,
+                        width: 33,
+                      ),
               ],
             ),
             const Spacer(),
@@ -63,7 +67,9 @@ class ProjectDesktop extends StatelessWidget {
                   GradientText(
                     "See More",
                     gradient: primaryGradientColor,
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: width > 1200
+                        ? Theme.of(context).textTheme.headlineMedium
+                        : Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(
                     width: 5,
@@ -101,7 +107,6 @@ class ProjectDesktop extends StatelessWidget {
         SizedBox(
           height: height * 0.03,
         ),
-        
         SizedBox(
           height: height * 0.03,
         ),

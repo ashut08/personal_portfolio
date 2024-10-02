@@ -17,7 +17,7 @@ class _MyServicesState extends State<MyServices> {
     return const ScreenHelper(
       tablet: ServiceDesktop(),
       desktop: ServiceDesktop(),
-      mobile: ServiceMobile(),
+      mobile: ServiceDesktop(),
     );
   }
 }

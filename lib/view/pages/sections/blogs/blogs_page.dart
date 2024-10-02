@@ -44,7 +44,7 @@ class _BlogPageState extends State<BlogPage> {
             width / (height * 0.9); // Adjust as needed to maintain balance
       } else {
         // For small screens, use a taller aspect ratio
-        aspectRatio = width / (height); // Make the cards taller
+        aspectRatio = 0.7; // Make the cards taller
       }
 
       return aspectRatio;
@@ -82,7 +82,9 @@ class _BlogPageState extends State<BlogPage> {
                 GradientText(
                   "Blogs",
                   gradient: primaryGradientColor,
-                  style: Theme.of(context).textTheme.displaySmall,
+                  style: width > 1200
+                      ? Theme.of(context).textTheme.headlineMedium
+                      : Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(
                   width: 10,
@@ -106,7 +108,9 @@ class _BlogPageState extends State<BlogPage> {
                   GradientText(
                     "Read More",
                     gradient: primaryGradientColor,
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: width > 1200
+                        ? Theme.of(context).textTheme.headlineMedium
+                        : Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(
                     width: 5,

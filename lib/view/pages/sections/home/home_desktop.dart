@@ -33,18 +33,22 @@ class HomeMobile extends StatelessWidget {
               themeProvider.lightTheme
                   ? "assets/dpimage/light.png"
                   : "assets/dpimage/dark.png",
-              height: width! < 1200 ? height! * 0.75 : height! * 0.85,
+              height: width! < 1200 ? height! * 0.65 : height! * 0.85,
+              fit: BoxFit.cover,
             ),
           ),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            size10,
+            size10,
             Text(
               "Welcome to my portfolio",
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Hi!, I’m",
@@ -54,10 +58,12 @@ class HomeMobile extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                GradientText(
-                  "Ashutosh Singh",
-                  gradient: primaryGradientColor,
-                  style: Theme.of(context).textTheme.displaySmall,
+                Expanded(
+                  child: GradientText(
+                    "Ashutosh Singh",
+                    gradient: primaryGradientColor,
+                    style: Theme.of(context).textTheme.displaySmall,
+                  ),
                 )
               ],
             ),
@@ -78,51 +84,56 @@ class HomeMobile extends StatelessWidget {
                     animatedTexts: [
                       TypewriterAnimatedText(
                         ' ',
-                        textStyle: GoogleFonts.openSans(
-                            fontSize: height * 0.045,
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 1.1),
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .titleLarge
+                            ?.copyWith(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.bold),
                         cursor: '|',
                         speed: const Duration(milliseconds: 100),
                       ),
                       TypewriterAnimatedText(
                         'Flutter Developer',
-                        textStyle: GoogleFonts.openSans(
-                            fontSize: height * 0.045,
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 1.1),
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .titleLarge
+                            ?.copyWith(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.bold),
                         cursor: ' | ',
                         speed: const Duration(milliseconds: 100),
                       ),
                       TypewriterAnimatedText(
                         'Technical Writer',
-                        textStyle: GoogleFonts.openSans(
-                            fontSize: height * 0.045,
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 1.1),
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .titleLarge
+                            ?.copyWith(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.bold),
                         cursor: '|',
                         speed: const Duration(milliseconds: 100),
                       ),
                       TypewriterAnimatedText(
                         'DevOps enthusiastic',
-                        textStyle: GoogleFonts.openSans(
-                            fontSize: height * 0.045,
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 1.1),
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .titleLarge
+                            ?.copyWith(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.bold),
                         cursor: '|',
                         speed: const Duration(milliseconds: 100),
                       ),
                       TypewriterAnimatedText(
                         'UI/UX enthusiastic',
-                        textStyle: GoogleFonts.openSans(
-                            fontSize: height * 0.045,
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 1.1),
+                        textStyle: Theme.of(context)
+                            .textTheme
+                            .titleLarge
+                            ?.copyWith(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.bold),
                         cursor: '|',
                         speed: const Duration(milliseconds: 100),
                       ),
@@ -173,7 +184,7 @@ class HomeMobile extends StatelessWidget {
                     SocialMediaIcon(
                       icon: ksocialData[i].icon,
                       socialLink: ksocialData[i].link,
-                      height: height * 0.02,
+                      height: height * 0.01,
                       horizontalPadding: 2.0,
                     )
                 ],
