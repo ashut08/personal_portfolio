@@ -13,6 +13,6 @@ Personal Portfolio made with flutter
 
 </p>
 <p float="center">
-  <img src="[screenshots/img2.png](https://raw.githubusercontent.com/ashut08/personal_portfolio/refs/heads/main/screenshots/img2.png)" />
+  <img src="https://raw.githubusercontent.com/ashut08/personal_portfolio/refs/heads/main/screenshots/img2.png" />
 
 </p>
