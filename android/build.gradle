@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:8.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.3.13'
     }
@@ -23,9 +23,23 @@ rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
+
 subprojects {
-    project.evaluationDependsOn(':app')
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            project.android {
+                // Check and set the namespace only if it's not defined
+                if (!project.android.hasProperty('namespace') || project.android.namespace == null) {
+                    namespace = "${project.group}.${project.name.replace('-', '_')}"
+                }
+
+              
+               
+            }
+        }
+    }
 }
+
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir

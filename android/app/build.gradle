@@ -30,7 +30,9 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
    }
 android {
-    compileSdkVersion flutter.compileSdkVersion
+        namespace "com.example.personal_portfolio"
+
+    compileSdkVersion 35
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -68,8 +70,8 @@ android {
    buildTypes {
        release {
            signingConfig signingConfigs.release
-             minifyEnabled true
-            shrinkResources true
+             minifyEnabled false
+            shrinkResources false
 
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
        }
