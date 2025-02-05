@@ -17,7 +17,7 @@ class _AboutMeState extends State<AboutMe> {
   @override
   Widget build(BuildContext context) {
     return const ScreenHelper(
-      tablet: AboutDesktop(),
+      tablet: AboutTab(),
       desktop: AboutDesktop(),
       mobile: AboutMoile(),
     );

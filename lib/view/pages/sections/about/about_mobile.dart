@@ -31,12 +31,11 @@ class AboutMoile extends StatelessWidget {
             height: height! * 0.6,
             width: width! / 1.3,
             //   margin: const EdgeInsets.all(10),
-            color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
             child: Container(
               height: height * 0.6,
               padding: const EdgeInsets.all(6),
               child: Image.asset(
-                "assets/dpimage/image.jpeg",
+                "assets/dpimage/profile2.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -99,18 +98,20 @@ class AboutMoile extends StatelessWidget {
           color: themeProvider.lightTheme ? Colors.black : Colors.white,
         ),
         size10,
-        const Row(
+        const Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AboutMeData(
+              width: double.infinity,
               alignment: Alignment.center,
               data: "Name",
               information: AboutUtils.name,
             ),
             SizedBox(
-              width: 10,
+              height: 10,
             ),
             AboutMeData(
+              width: double.infinity,
               alignment: Alignment.center,
               data: "Email",
               information: AboutUtils.email,
@@ -118,18 +119,20 @@ class AboutMoile extends StatelessWidget {
           ],
         ),
         size10,
-        Row(
+        Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AboutMeData(
+              width: double.infinity,
               alignment: Alignment.center,
               data: "Age",
               information: AboutUtils().ageCalculate(AboutUtils.dob).toString(),
             ),
             const SizedBox(
-              width: 10,
+              height: 10,
             ),
             const AboutMeData(
+              width: double.infinity,
               alignment: Alignment.center,
               data: "Address",
               information: AboutUtils.addreess,

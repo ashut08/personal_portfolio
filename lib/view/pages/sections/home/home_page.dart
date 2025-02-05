@@ -15,9 +15,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return const ScreenHelper(
-      desktop: HomeDesktop(),
-      mobile: HomeMobile(),
-      tablet: HomeDesktop(),
-    );
+        desktop: HomeDesktop(), mobile: HomeMobile(), tablet: HomeTab());
   }
 }

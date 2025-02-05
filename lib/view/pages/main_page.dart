@@ -1,4 +1,5 @@
 import 'package:AshuTech/utils/colors.dart';
+import 'package:AshuTech/widgets/arrow_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -61,7 +62,7 @@ class _MainPageState extends State<MainPage> {
       return const BlogPage();
     } else if (i == 5) {
       return const ContactMe();
-    } else{
+    } else {
       return Container();
     }
   }
@@ -129,17 +130,7 @@ class _MainPageState extends State<MainPage> {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: _isScrollingDown
-            ? InkWell(
-                onTap: () => _scroll(0),
-                child: Transform.rotate(
-                  angle: -340,
-                  child: SvgPicture.asset(
-                    "assets/rocket-svgrepo-com.svg",
-                    height: 40,
-                    color: kSecondryColor,
-                  ),
-                ),
-              )
+            ? InkWell(onTap: () => _scroll(0), child: ArrowUp())
             : Container(),
         extendBodyBehindAppBar: true,
         appBar: AppBar(
@@ -173,17 +164,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
       floatingActionButton: _isScrollingDown
-          ? InkWell(
-              onTap: () => _scroll(0),
-              child: Transform.rotate(
-                angle: -340,
-                child: SvgPicture.asset(
-                  "assets/rocket-svgrepo-com.svg",
-                  height: 40,
-                  color: kSecondryColor,
-                ),
-              ),
-            )
+          ? InkWell(onTap: () => _scroll(0), child: const ArrowUp())
           : Container(),
       appBar: _appBarTabDesktop(themeProv),
       body: SectionsBody(
@@ -396,7 +377,6 @@ class _MainPageState extends State<MainPage> {
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
-            
             ],
           ),
         ),

@@ -69,7 +69,6 @@ class _SocialMediaIconState extends State<SocialMediaIcon> {
           ),
           iconSize: widget.height,
           onPressed: () async {
-            
             url.launchUrl(Uri.parse(widget.socialLink!));
           },
           hoverColor: Colors.transparent,

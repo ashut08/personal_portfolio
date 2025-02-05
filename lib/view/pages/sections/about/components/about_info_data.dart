@@ -7,9 +7,11 @@ class AboutMeData extends StatelessWidget {
   final String data;
   final String information;
   final Alignment? alignment;
+  final double? width;
 
   const AboutMeData({
     super.key,
+    this.width,
     required this.data,
     required this.information,
     this.alignment,
@@ -19,6 +21,7 @@ class AboutMeData extends StatelessWidget {
     return Align(
       alignment: alignment ?? Alignment.center,
       child: GradientBorderContainer(
+        width: width,
         height: 90,
         gradient: primaryGradientColor,
         child: Column(

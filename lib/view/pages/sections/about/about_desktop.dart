@@ -36,12 +36,11 @@ class AboutDesktop extends StatelessWidget {
               alignment: Alignment.center,
               height: height! * 0.6,
               //   height: height! / 2.6,
-              color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
               child: Container(
                 height: height * 0.6,
                 padding: const EdgeInsets.all(6),
                 child: Image.asset(
-                  "assets/dpimage/image.jpeg",
+                  "assets/dpimage/profile2.png",
                   fit: BoxFit.cover,
                 ),
               ),

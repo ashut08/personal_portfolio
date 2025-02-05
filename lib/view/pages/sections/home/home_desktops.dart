@@ -158,6 +158,7 @@ class HomeDesktop extends StatelessWidget {
                     ),
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       for (int i = 0; i < ksocialData.length; i++)
                         SocialMediaIcon(
@@ -180,9 +181,7 @@ class HomeDesktop extends StatelessWidget {
             delay: const Duration(seconds: 1),
             duration: const Duration(milliseconds: 800),
             child: Image.asset(
-              themeProvider.lightTheme
-                  ? "assets/dpimage/light.png"
-                  : "assets/dpimage/dark.png",
+              "assets/dpimage/profile1.png",
               height: width < 1200 ? height * 0.8 : height * 0.85,
             ),
           ),

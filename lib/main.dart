@@ -1,16 +1,23 @@
 import 'package:AshuTech/utils/theme_style.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
 import 'package:AshuTech/view/pages/splash_screen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   runApp(const MyApp());
+  loadEmailJsSecretKey();
+
+  runApp(const MyApp());
   // Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
   //     .then((value) => runApp(const MyApp()));
+}
+
+loadEmailJsSecretKey() async {
+  await dotenv.load(fileName: ".env");
 }
 
 class MyApp extends StatelessWidget {
