@@ -9,7 +9,7 @@ Personal Portfolio made with flutter
 📲   Google Play Store Link:https://play.google.com/store/apps/details?id=com.lovecodingwithashu.app
 
 <p float="center">
-  <img src="screenshots/img1.png" />
+  <img src="https://raw.githubusercontent.com/ashut08/personal_portfolio/refs/heads/main/screenshots/img1.png" />
 
 </p>
 <p float="center">
