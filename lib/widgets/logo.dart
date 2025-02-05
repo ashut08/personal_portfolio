@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
-  const Logo({Key? key}) : super(key: key);
+  const Logo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
           shape: BoxShape.circle,
-          image: DecorationImage(image: AssetImage("assets/logo_light.png"))),
+          image: DecorationImage(
+              image: AssetImage("assets/newicon/logo.webp"),
+              fit: BoxFit.cover)),
       // margin: const EdgeInsets.all(20),
       height: 70,
       width: 70,
@@ -22,7 +24,7 @@ class Logo extends StatelessWidget {
 }
 
 class LightLogo extends StatelessWidget {
-  const LightLogo({Key? key}) : super(key: key);
+  const LightLogo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +32,7 @@ class LightLogo extends StatelessWidget {
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: AssetImage("assets/logo_dark.png"),
-        ),
+            image: AssetImage("assets/newicon/logo.webp"), fit: BoxFit.cover),
       ),
       // margin: const EdgeInsets.all(20),
       height: 70,

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class ToolTechWidget extends StatelessWidget {
   final String techName;
 
-  const ToolTechWidget({Key? key, required this.techName}) : super(key: key);
+  const ToolTechWidget({super.key, required this.techName});
   @override
   Widget build(BuildContext context) {
     final themProv = Provider.of<ThemeProvider>(context);
@@ -19,7 +19,7 @@ class ToolTechWidget extends StatelessWidget {
           // size: AppDimensions.normalize(6),
         ),
         Text(
-          " $techName ",
+          techName,
           style: TextStyle(
               fontWeight: FontWeight.w700,
               color: themProv.lightTheme ? Colors.black : Colors.white),

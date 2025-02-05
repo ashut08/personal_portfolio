@@ -1,33 +1,38 @@
+import 'package:AshuTech/models/social_media_model.dart';
+import 'package:AshuTech/widgets/social_icons.dart';
 import 'package:flutter/material.dart';
 
 // Colors
-const Color kPrimaryColor = Color(0xff81230F);
-const Color kSecondryColor = Color(0xffF79F1F);
+const Color kPrimaryColor = Color(0xff518DFF);
+const Color kSecondryColor = Color(0xffAF2BFC);
 
 // Social Media
-const kSocialIcons = [
-  "assets/linkedin-in-brands.svg",
-  "assets/stackoverflow.svg",
-  "assets/instagram-brands.svg",
-  "assets/medium.svg",
-  "assets/twitter-brands.svg",
-  "assets/github-brands.svg"
-];
+
 //medium blogs url
 SizedBox size10 = const SizedBox(
   height: 10,
 );
 const String mediumBlogUrl =
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ashuflutterdev";
-const kSocialLinks = [
-  "https://www.linkedin.com/in/ashu8/",
-  "https://stackoverflow.com/users/13400001/ashutosh-singh",
-  "https://www.instagram.com/love_coding_with_ashu/",
-  "https://medium.com/@ashuflutterdev",
-  "https://twitter.com/ashu_080",
-  "https://github.com/ashut08"
-];
 
+final List<SocialMediaModel> ksocialData = [
+  SocialMediaModel(
+      icon: "assets/newicon/linkedin.svg",
+      link: "https://www.linkedin.com/in/ashu8/"),
+  SocialMediaModel(
+      icon: "assets/newicon/stackoverflow.svg",
+      link: "https://stackoverflow.com/users/13400001/ashutosh-singh"),
+  SocialMediaModel(
+      icon: "assets/newicon/instagram.svg",
+      link: "https://www.instagram.com/love_coding_with_ashu/"),
+  SocialMediaModel(
+      icon: "assets/newicon/media.svg",
+      link: "https://medium.com/@ashuflutterdev"),
+  SocialMediaModel(
+      icon: "assets/newicon/twitter.svg", link: "https://twitter.com/ashu_080"),
+  SocialMediaModel(
+      icon: "assets/newicon/github.svg", link: "https://github.com/ashut08"),
+];
 // URL Launcher
 // void launchURL(String url) async => await launchUrl(Uri.parse(url))
 //     ? await launchUrl(Uri.parse(url))
@@ -41,13 +46,14 @@ const String ur =
 final kTools = [
   "Flutter",
   "Dart",
+  'Firebase',
+  'Swift UI',
   "Kotlin",
+  'Jenkins',
+  'Docker',
   "Swift",
   "Git",
 ];
-
-// services
-final kServicesIcons = [];
 
 final kServicesTitles = [
   "Mobile App Development",
@@ -58,33 +64,3 @@ final kServicesTitles = [
 ];
 
 const String mediumrl = "https://ashuflutterdev.medium.com/";
-
-// ignore: non_constant_identifier_names
-
-final kServicesDescriptions = [];
-
-// projects
-final kProjectsBanner = [];
-
-final kProjectsIcons = [];
-
-final kProjectsTitles = [];
-
-final kProjectsDescriptions = [];
-
-final kProjectsLinks = [];
-
-// Contact
-final kContactIcons = [
-  Icons.home,
-  Icons.phone,
-  Icons.mail,
-];
-
-final kContactTitles = [
-  "Location",
-  "Phone",
-  "Email",
-];
-
-final kContactDetails = [];

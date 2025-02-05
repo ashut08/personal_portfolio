@@ -8,8 +8,12 @@ import 'package:AshuTech/view/pages/sections/about/components/resume_download_bu
 import 'package:AshuTech/view/pages/sections/about/components/tech_widget.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../utils/colors.dart';
+import '../../../../widgets/divider.dart';
+import '../../../../widgets/gradient_text.dart';
+
 class AboutMoile extends StatelessWidget {
-  const AboutMoile({Key? key}) : super(key: key);
+  const AboutMoile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,44 +31,30 @@ class AboutMoile extends StatelessWidget {
             height: height! * 0.6,
             width: width! / 1.3,
             //   margin: const EdgeInsets.all(10),
-            color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
             child: Container(
               height: height * 0.6,
               padding: const EdgeInsets.all(6),
               child: Image.asset(
-                "assets/dpimage/image.jpeg",
+                "assets/dpimage/profile2.png",
                 fit: BoxFit.cover,
               ),
             ),
           ),
         ),
         size10,
-        Stack(
-          alignment: Alignment.bottomCenter,
+        Row(
           children: [
-            Center(
-              child: Text(
-                "about me".toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: height * 0.055,
-                  color: themeProvider.lightTheme
-                      ? Colors.black.withOpacity(0.2)
-                      : Colors.white.withOpacity(0.2),
-                ),
-              ),
+            const CustomDivider(
+              height: 4,
+              width: 33,
             ),
-            Positioned(
-              bottom: 8,
-              child: Text(
-                "I'm Ashutosh Singh",
-                style: TextStyle(
-                  fontSize: height * 0.026,
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
+            const SizedBox(
+              width: 10,
+            ),
+            GradientText(
+              "About Me",
+              gradient: primaryGradientColor,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ],
         ),
@@ -92,9 +82,11 @@ class AboutMoile extends StatelessWidget {
           ),
         ),
         size10,
-        Row(
+        Wrap(
+          alignment: WrapAlignment.center,
+          verticalDirection: VerticalDirection.up,
           // alignment: WrapAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: kTools
               .map(
                 (e) => ToolTechWidget(techName: e),
@@ -106,28 +98,46 @@ class AboutMoile extends StatelessWidget {
           color: themeProvider.lightTheme ? Colors.black : Colors.white,
         ),
         size10,
-        const AboutMeData(
-          alignment: Alignment.topLeft,
-          data: "Name",
-          information: AboutUtils.name,
+        const Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AboutMeData(
+              width: double.infinity,
+              alignment: Alignment.center,
+              data: "Name",
+              information: AboutUtils.name,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            AboutMeData(
+              width: double.infinity,
+              alignment: Alignment.center,
+              data: "Email",
+              information: AboutUtils.email,
+            ),
+          ],
         ),
         size10,
-        const AboutMeData(
-          alignment: Alignment.topLeft,
-          data: "Email",
-          information: AboutUtils.email,
-        ),
-        size10,
-        AboutMeData(
-          alignment: Alignment.topLeft,
-          data: "Age",
-          information: AboutUtils().ageCalculate(AboutUtils.dob).toString(),
-        ),
-        size10,
-        const AboutMeData(
-          alignment: Alignment.topLeft,
-          data: "Address",
-          information: AboutUtils.addreess,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AboutMeData(
+              width: double.infinity,
+              alignment: Alignment.center,
+              data: "Age",
+              information: AboutUtils().ageCalculate(AboutUtils.dob).toString(),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const AboutMeData(
+              width: double.infinity,
+              alignment: Alignment.center,
+              data: "Address",
+              information: AboutUtils.addreess,
+            ),
+          ],
         ),
         size10,
         size10,

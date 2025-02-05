@@ -1,3 +1,5 @@
+import 'package:AshuTech/utils/colors.dart';
+import 'package:AshuTech/widgets/arrow_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,7 +21,7 @@ import 'package:AshuTech/widgets/logo.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -39,7 +41,9 @@ class _MainPageState extends State<MainPage> {
                   ? MediaQuery.of(context).size.height * 1.98
                   : i == 3
                       ? MediaQuery.of(context).size.height * 2.9
-                      : MediaQuery.of(context).size.height * 4,
+                      : i == 4
+                          ? MediaQuery.of(context).size.height * 4
+                          : MediaQuery.of(context).size.height * 4.5,
       duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );
@@ -55,11 +59,11 @@ class _MainPageState extends State<MainPage> {
     } else if (i == 3) {
       return const MyProject();
     } else if (i == 4) {
-      return const ContactMe();
+      return const BlogPage();
     } else if (i == 5) {
-      return const Footer();
+      return const ContactMe();
     } else {
-      return const Footer();
+      return Container();
     }
   }
 
@@ -68,7 +72,8 @@ class _MainPageState extends State<MainPage> {
     "ABOUT",
     "SERVICES",
     "PROJECTS",
-    "CONTACT"
+    "BLOGS",
+    "CONTACTS"
   ];
 
   final ThemeProvider _themeProviders = ThemeProvider();
@@ -77,7 +82,7 @@ class _MainPageState extends State<MainPage> {
     Icons.person,
     Icons.settings,
     Icons.build,
-    //Icons.article,
+    Icons.article,
     Icons.phone,
   ];
   @override
@@ -119,24 +124,15 @@ class _MainPageState extends State<MainPage> {
   }
 
   _mobile() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     final themeProv = Provider.of<ThemeProvider>(context);
     return SafeArea(
       child: Scaffold(
         floatingActionButton: _isScrollingDown
-            ? InkWell(
-                onTap: () => _scroll(0),
-                child: Transform.rotate(
-                  angle: -340,
-                  child: SvgPicture.asset(
-                    "assets/rocket-svgrepo-com.svg",
-                    height: 40,
-                    color: kSecondryColor,
-                  ),
-                ),
-              )
+            ? InkWell(onTap: () => _scroll(0), child: ArrowUp())
             : Container(),
         extendBodyBehindAppBar: true,
-        backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
         appBar: AppBar(
           iconTheme: IconThemeData(
               color: themeProv.lightTheme ? Colors.black : Colors.white),
@@ -150,10 +146,14 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
         drawer: _appBarMobile(themeProv),
-        body: SectionsBody(
-          scrollController: _scrollController,
-          sectionsLength: _sectionsIcons.length,
-          sectionWidget: sectionWidget,
+        body: Padding(
+          padding:
+              EdgeInsets.fromLTRB(width * 0.1, height * 0.1, width * 0.1, 0),
+          child: SectionsBody(
+            scrollController: _scrollController,
+            sectionsLength: _sectionsIcons.length,
+            sectionWidget: sectionWidget,
+          ),
         ),
       ),
     );
@@ -164,17 +164,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
       floatingActionButton: _isScrollingDown
-          ? InkWell(
-              onTap: () => _scroll(0),
-              child: Transform.rotate(
-                angle: -340,
-                child: SvgPicture.asset(
-                  "assets/rocket-svgrepo-com.svg",
-                  height: 40,
-                  color: kSecondryColor,
-                ),
-              ),
-            )
+          ? InkWell(onTap: () => _scroll(0), child: const ArrowUp())
           : Container(),
       appBar: _appBarTabDesktop(themeProv),
       body: SectionsBody(
@@ -195,16 +185,27 @@ class _MainPageState extends State<MainPage> {
             child: Container(
               padding: const EdgeInsets.all(8.0),
               height: 60.0,
-              child: MaterialButton(
-                hoverColor: kPrimaryColor,
-                onPressed: () => _scroll(index),
-                child: Text(
-                  childText,
-                  style: TextStyle(
-                    color:
-                        themeProvider.lightTheme ? Colors.black : Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      _scroll(index);
+                    },
+                    onHover: (val) {},
+                    child: Text(
+                      childText,
+                      style: TextStyle(
+                        color: themeProvider.lightTheme
+                            ? Colors.black
+                            : Colors.white,
+                      ),
+                    ),
                   ),
-                ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                ],
               ),
             ),
           )
@@ -235,7 +236,7 @@ class _MainPageState extends State<MainPage> {
   AppBar _appBarTabDesktop(ThemeProvider themeProv) {
     return AppBar(
       elevation: 0.0,
-      backgroundColor: themeProv.lightTheme ? Colors.white : Colors.grey[800],
+      backgroundColor: themeProv.lightTheme ? Colors.white : Colors.black,
       title: MediaQuery.of(context).size.width < 780
           ? EntranceFader(
               duration: const Duration(milliseconds: 250),
@@ -252,52 +253,88 @@ class _MainPageState extends State<MainPage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], themeProv),
-        EntranceFader(
-          offset: const Offset(0, -10),
-          delay: const Duration(milliseconds: 100),
-          duration: const Duration(milliseconds: 250),
-          child: Container(
-            padding: const EdgeInsets.all(8.0),
-            height: 60.0,
-            child: MaterialButton(
-              hoverColor: kPrimaryColor,
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const BlogPage())),
-              child: Text(
-                "Blogs".toUpperCase(),
-                style: TextStyle(
-                  color: themeProv.lightTheme ? Colors.black : Colors.white,
-                ),
+        GestureDetector(
+          onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            height: 40,
+            width: 80,
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                colors: themeProv.lightTheme
+                    ? [Colors.black45, Colors.black87]
+                    : gradientColor,
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
               ),
+            ),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: !themeProv.lightTheme
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      color:
+                          !themeProv.lightTheme ? Colors.black : Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: !themeProv.lightTheme
+                              ? Colors.white.withOpacity(0.2)
+                              : Colors.black.withOpacity(0.2),
+                          blurRadius: 5,
+                          spreadRadius: 1,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Icon(
+                      themeProv.lightTheme ? Icons.nights_stay : Icons.wb_sunny,
+                      color:
+                          themeProv.lightTheme ? Colors.white : kPrimaryColor,
+                      size: 30,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
-        const SizedBox(width: 15.0),
-        SizedBox(
-            height: 30.0,
-            child: InkWell(
-              onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: themeProv.lightTheme ? Colors.grey : Colors.white),
-                child: Icon(
-                    themeProv.lightTheme
-                        ? Icons.light_mode_outlined
-                        : Icons.dark_mode_outlined,
-                    color: kPrimaryColor),
-              ),
-            )
+        // SizedBox(
+        //     height: 30.0,
+        //     child: InkWell(
+        //       onTap: () => themeProv.lightTheme = !themeProv.lightTheme,
+        //       child: Container(
+        //         alignment: Alignment.center,
+        //         padding: const EdgeInsets.all(10),
+        //         decoration: BoxDecoration(
+        //             shape: BoxShape.circle,
+        //             color: themeProv.lightTheme ? Colors.grey : Colors.white),
+        //         child: Padding(
+        //           padding: const EdgeInsets.only(bottom: 4),
+        //           child: Icon(
+        //               themeProv.lightTheme
+        //                   ? Icons.light_mode_outlined
+        //                   : Icons.dark_mode_outlined,
+        //               color: kPrimaryColor),
+        //         ),
+        //       ),
+        //     )
 
-            // Switch(
-            //   inactiveTrackColor: Colors.grey,
-            //   value: !themeProv.lightTheme,
-            //   onChanged: (value) {
-            //     themeProv.lightTheme = !value;
-            //   },
+        //     // Switch(
+        //     //   inactiveTrackColor: Colors.grey,
+        //     //   value: !themeProv.lightTheme,
+        //     //   onChanged: (value) {
+        //     //     themeProv.lightTheme = !value;
+        //     //   },
 
-            ),
+        //     ),
         const SizedBox(width: 15.0),
       ],
     );
@@ -340,41 +377,6 @@ class _MainPageState extends State<MainPage> {
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
-              EntranceFader(
-                offset: const Offset(0, -10),
-                delay: const Duration(milliseconds: 100),
-                duration: const Duration(milliseconds: 250),
-                child: Container(
-                  margin: const EdgeInsets.only(right: 20, left: 20),
-                  padding: const EdgeInsets.all(8.0),
-                  height: 60.0,
-                  child: MaterialButton(
-                    hoverColor: kPrimaryColor,
-                    onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const BlogPage())),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.article_outlined,
-                          color: kPrimaryColor,
-                        ),
-                        const SizedBox(
-                          width: 30,
-                        ),
-                        Text(
-                          "Blogs".toUpperCase(),
-                          style: TextStyle(
-                            color:
-                                theme.lightTheme ? Colors.black : Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
             ],
           ),
         ),

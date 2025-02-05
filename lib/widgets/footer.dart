@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Footer extends StatelessWidget {
-  const Footer({Key? key}) : super(key: key);
+  const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,6 @@ class Footer extends StatelessWidget {
                   "Developed in 💙 with ",
                 ),
                 InkWell(
-                  // onTap: () => openURL("https://github.com/mhmzdev/DevFolio"),
                   child: Text(
                     "Flutter",
                     style: TextStyle(color: Colors.blue),

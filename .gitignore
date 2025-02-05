@@ -34,7 +34,6 @@ migrate_working_dir/
 /build/
 
 # Web related
-lib/generated_plugin_registrant.dart
 
 # Symbolication related
 app.*.symbols
@@ -54,3 +53,5 @@ app.*.map.json
 
 #firebase configure file
 /lib/firebase_options.dart
+
+.env

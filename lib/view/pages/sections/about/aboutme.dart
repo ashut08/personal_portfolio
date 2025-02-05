@@ -7,7 +7,7 @@ import 'package:AshuTech/view/pages/sections/about/about_mobile.dart';
 import 'package:AshuTech/view/pages/sections/about/about_tab.dart';
 
 class AboutMe extends StatefulWidget {
-  const AboutMe({Key? key}) : super(key: key);
+  const AboutMe({super.key});
 
   @override
   State<AboutMe> createState() => _AboutMeState();

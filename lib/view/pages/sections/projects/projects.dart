@@ -5,7 +5,7 @@ import 'package:AshuTech/view/pages/sections/projects/projects_desktop.dart';
 import 'package:AshuTech/view/pages/sections/projects/projects_mobile.dart';
 
 class MyProject extends StatefulWidget {
-  const MyProject({Key? key}) : super(key: key);
+  const MyProject({super.key});
 
   @override
   State<MyProject> createState() => _MyProjectState();
@@ -17,7 +17,7 @@ class _MyProjectState extends State<MyProject> {
     return const ScreenHelper(
       tablet: ProjectDesktop(),
       desktop: ProjectDesktop(),
-      mobile: ProjectsMobile(),
+      mobile: ProjectDesktop(),
     );
   }
 }

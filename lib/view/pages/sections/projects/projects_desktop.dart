@@ -1,3 +1,4 @@
+import 'package:AshuTech/config/space.dart';
 import 'package:flutter/material.dart';
 import 'package:AshuTech/config/app_dimension.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
@@ -6,52 +7,86 @@ import 'package:AshuTech/utils/project_utils.dart';
 import 'package:AshuTech/utils/sizeconfig.dart';
 import 'package:AshuTech/view/pages/sections/projects/components/projects_card.dart';
 import 'package:AshuTech/view/pages/sections/projects/components/see_more_button.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
+import '../../../../utils/colors.dart';
+import '../../../../widgets/divider.dart';
+import '../../../../widgets/gradient_text.dart';
 
 class ProjectDesktop extends StatelessWidget {
-  const ProjectDesktop({Key? key}) : super(key: key);
+  const ProjectDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     var height = SizeConfig.screenHeight;
-    // var width = SizeConfig.screenWidth;
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    var width = SizeConfig.screenWidth;
     return Column(
       children: [
         size10,
         size10,
-        Stack(
-          alignment: Alignment.bottomCenter,
+        Row(
           children: [
-            Center(
-              child: Text(
-                "portfolio".toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: height! * 0.055,
-                  color: themeProvider.lightTheme
-                      ? Colors.black.withOpacity(0.2)
-                      : Colors.white.withOpacity(0.2),
+            const Spacer(),
+            Row(
+              children: [
+                const CustomDivider(
+                  height: 4,
+                  width: 33,
                 ),
+                const SizedBox(
+                  width: 10,
+                ),
+                GradientText(
+                  "My Work",
+                  gradient: primaryGradientColor,
+                  style: width! > 1200
+                      ? Theme.of(context).textTheme.headlineMedium
+                      : Theme.of(context).textTheme.titleLarge,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                width < 1200
+                    ? const SizedBox()
+                    : const CustomDivider(
+                        height: 4,
+                        width: 33,
+                      ),
+              ],
+            ),
+            const Spacer(),
+            InkWell(
+              onTap: () => launchUrlString("https://github.com/ashut08/"),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  GradientText(
+                    "See More",
+                    gradient: primaryGradientColor,
+                    style: width > 1200
+                        ? Theme.of(context).textTheme.headlineMedium
+                        : Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: SvgPicture.asset("assets/newicon/arrow.svg"))
+                ],
               ),
             ),
-            Positioned(
-              bottom: 8,
-              child: Text(
-                "My Work",
-                style: TextStyle(
-                  fontSize: height * 0.032,
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
+            const SizedBox(
+              width: 10,
             ),
           ],
         ),
         SizedBox(
-          height: height * 0.03,
+          height: height! * 0.03,
         ),
         Wrap(
           spacing: 4,
@@ -72,7 +107,6 @@ class ProjectDesktop extends StatelessWidget {
         SizedBox(
           height: height * 0.03,
         ),
-        const SeeMore(),
         SizedBox(
           height: height * 0.03,
         ),

@@ -27,15 +27,11 @@ class AboutTab extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              //   height: height! / 2.6,
-              color: !themeProvider.lightTheme ? Colors.white : Colors.black54,
-              child: Container(
-                height: height! * 0.7,
-                padding: const EdgeInsets.all(6),
-                child: Image.asset(
-                  "assets/dpimage/image.jpeg",
-                  fit: BoxFit.cover,
-                ),
+              height: height! * 0.7,
+              padding: const EdgeInsets.all(6),
+              child: Image.asset(
+                "assets/dpimage/profile2.png",
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -76,9 +72,9 @@ class AboutTab extends StatelessWidget {
                     ),
                   ),
                   size10,
-                  Row(
+                  Wrap(
                     // alignment: WrapAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: kTools
                         .map(
                           (e) => ToolTechWidget(techName: e),
@@ -91,30 +87,44 @@ class AboutTab extends StatelessWidget {
                         themeProvider.lightTheme ? Colors.black : Colors.white,
                   ),
                   size10,
-                  const AboutMeData(
-                    alignment: Alignment.topLeft,
-                    data: "Name",
-                    information: AboutUtils.name,
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const AboutMeData(
+                        alignment: Alignment.topLeft,
+                        data: "Name",
+                        information: AboutUtils.name,
+                      ),
+                      size10,
+                      const AboutMeData(
+                        alignment: Alignment.topLeft,
+                        data: "Email",
+                        information: AboutUtils.email,
+                      ),
+                    ],
                   ),
                   size10,
-                  const AboutMeData(
-                    alignment: Alignment.topLeft,
-                    data: "Email",
-                    information: AboutUtils.email,
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      AboutMeData(
+                        alignment: Alignment.topLeft,
+                        data: "Age",
+                        information: AboutUtils()
+                            .ageCalculate(AboutUtils.dob)
+                            .toString(),
+                      ),
+                      size10,
+                      const AboutMeData(
+                        alignment: Alignment.topLeft,
+                        data: "Address",
+                        information: AboutUtils.addreess,
+                      ),
+                    ],
                   ),
-                  size10,
-                  AboutMeData(
-                    alignment: Alignment.topLeft,
-                    data: "Age",
-                    information:
-                        AboutUtils().ageCalculate(AboutUtils.dob).toString(),
-                  ),
-                  size10,
-                  const AboutMeData(
-                    alignment: Alignment.topLeft,
-                    data: "Address",
-                    information: AboutUtils.addreess,
-                  ),
+
                   size10,
                   size10,
                   const ResumeDownloadButton()
