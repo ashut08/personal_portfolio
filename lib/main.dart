@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  loadEmailJsSecretKey();
+  //loadEmailJsSecretKey();
 
   runApp(const MyApp());
   // Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
