@@ -1,5 +1,3 @@
-import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/material.dart';
 import 'package:AshuTech/animation/flip_card.dart';
 import 'package:AshuTech/config/app_dimension.dart';
 import 'package:AshuTech/config/space.dart';
@@ -8,6 +6,8 @@ import 'package:AshuTech/models/projects_model.dart';
 import 'package:AshuTech/provider/theme_provider.dart';
 import 'package:AshuTech/utils/constant.dart';
 import 'package:AshuTech/utils/sizeconfig.dart';
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -78,11 +78,12 @@ class _ProjectsCardState extends State<ProjectsCard> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: DottedBorder(
-          color: kPrimaryColor,
-          dashPattern: const [4, 4],
-          strokeWidth: 2,
-          borderType: BorderType.RRect,
-          radius: const Radius.circular(20),
+          options: RoundedRectDottedBorderOptions(
+            color: kPrimaryColor,
+            dashPattern: const [4, 4],
+            strokeWidth: 2,
+            radius: const Radius.circular(20),
+          ),
           child: Container(
             margin: const EdgeInsets.only(left: 10, right: 10),
             width: AppDimensions.normalize(150),
