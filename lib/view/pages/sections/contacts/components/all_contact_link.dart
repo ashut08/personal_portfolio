@@ -1,13 +1,8 @@
-import 'package:AshuTech/config/space.dart';
+import 'package:AshuTech/utils/about_utils.dart';
+import 'package:AshuTech/utils/constant.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:AshuTech/provider/theme_provider.dart';
-import 'package:AshuTech/utils/about_utils.dart';
-import 'package:AshuTech/utils/constant.dart';
-import 'package:provider/provider.dart';
-
-import '../../../../../utils/colors.dart';
 
 class AllContactLink extends StatelessWidget {
   const AllContactLink({super.key});
@@ -22,10 +17,8 @@ class AllContactLink extends StatelessWidget {
         children: [
           buildTile("assets/newicon/location.svg", "Location",
               AboutUtils.addreess, context),
-          
           buildTile(
               "assets/newicon/email.svg", "Email", AboutUtils.email, context),
-          
           buildTile("assets/newicon/contact.svg", "Phone", AboutUtils.mobileNo,
               context),
         ],
@@ -38,14 +31,15 @@ class AllContactLink extends StatelessWidget {
     return SizedBox(
       width: 400,
       child: DottedBorder(
-        dashPattern: const <double>[4, 1],
-        strokeWidth: 2,
-        borderType: BorderType.RRect,
-        radius: const Radius.circular(20),
-        color: kPrimaryColor,
-        padding: const EdgeInsets.symmetric(
-          vertical: 10,
-          horizontal: 40,
+        options: RoundedRectDottedBorderOptions(
+          dashPattern: const <double>[4, 1],
+          strokeWidth: 2,
+          radius: const Radius.circular(20),
+          color: kPrimaryColor,
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 40,
+          ),
         ),
         child: Center(
           child: Column(

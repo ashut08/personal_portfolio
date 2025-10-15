@@ -1,11 +1,11 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/mac/Documents/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/mac/Desktop/flutterProject/personal_portfolio"
+export "FLUTTER_ROOT=/Users/ashutoshsingh/Documents/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/ashutoshsingh/Desktop/flutter_project/personal_portfolio"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
-export "FLUTTER_BUILD_NAME=1.0.4"
-export "FLUTTER_BUILD_NUMBER=104"
+export "FLUTTER_BUILD_NAME=1.0.8"
+export "FLUTTER_BUILD_NUMBER=108"
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
